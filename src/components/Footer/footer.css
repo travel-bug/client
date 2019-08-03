@@ -1,13 +1,18 @@
+body {
+  margin-bottom: 150px;
+}
 .footer {
-    min-height: 100px;
-    background: #E5E5E5;
-  }
+  margin-top: -50px;
+  height: 25px;
+  background: blue;
+}
   
   .footer span {
-    position: absolute;
+    position: fixed;
+    margin-top: 30px;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 3px;
-    background: #B8B8B8;
+    padding: 25px;
+    background: red;
   }

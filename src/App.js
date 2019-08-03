@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Jumbotron from './components/Jumbotron/jumbotron';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/home";
 import See from "./pages/see";
@@ -21,7 +20,6 @@ class App extends Component {
             <Route exact path="/do" component={Do} />
             <Route exact path="/eat" component={Eat} />
           </Wrapper>
-          <Jumbotron />
           <Footer />
         </div>
       </Router>

@@ -1,20 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
-// import Image from '../../images/Project3_home.jpg';
 import Logo from '../Logo/bug_icon.png';
 import SearchBtn from "../../images/search_arrow.png";
 import Avatar from "../../images/avatar.png";
 
-function Navbar(props) {
-    return (
-      <nav className="navbar navbar-expand-lg" style={{ backgroundImage: `url(${props.backgroundImage})` }}>
-        <div className="nav-links">
+class Navbar extends Component {
+	render() {
+	return (
+		<nav className="navbar navbar-expand-lg" style={{ backgroundImage: `url(${this.props.backgroundImage})` }}>
+		<div className="nav-links">
 			<ul className="navbar-nav">
 				<li className="nav-item logo">
 					<Link className="navbar-brand" to="/">
 						<img src={Logo} className="logo" alt="Logo"></img>
-        			</Link>
+					</Link>
 				</li>
 				<li className="nav-item home">
 					<Link
@@ -49,7 +49,7 @@ function Navbar(props) {
 					</Link>
 				</li>
 				<div className="search">
-					<input className="form-control mr-sm-2" type="search" placeholder={props.placeholder} aria-label="Search"></input>
+					<input className="form-control mr-sm-2" type="search" placeholder={this.props.placeholder} aria-label="Search"></input>
 				</div>
 				<div className="search-btn">
 					<input className="arrow" type="image" src={SearchBtn} alt="Image missing..."></input>
@@ -67,9 +67,10 @@ function Navbar(props) {
 					<img className="avatar-img" src={Avatar} alt="Avatar"></img>
 				</div>
 			</ul>
-        </div>
-    </nav>
-  );
+		</div>
+	</nav>
+	);
+	}
 }
 
 export default Navbar;
