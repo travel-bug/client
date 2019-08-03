@@ -1,9 +1,10 @@
 :root {
     --modal-duration: 1s;
+    
 }
 
 .modal {
-    display: none;
+    display: inline-block;
     position: fixed;
     left: 0;
     right: 0;
@@ -11,6 +12,7 @@
     width: 100%;
     overflow: auto;
     background: rgba(0, 0, 0, 0.5);
+
 }
 
 .modal-content {
@@ -19,8 +21,24 @@
     margin: 10% auto;
     width: 350px;
     border-radius: 10px;
-    padding: 3rem;
+    padding: 1rem;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
-    animation-name: modalopen;
     animation-duration: var(--modal-duration);
+
+}
+
+.close span{
+    padding: 0;
+
+}
+
+.login-content {
+    padding: 1rem;
+
+}
+
+.login-image {
+    height: 100px;
+    width: 100px;
+
 }

@@ -5,7 +5,8 @@ import Logo from '../Logo/bug_icon.png';
 import SearchBtn from "../../images/search_arrow.png";
 import Avatar from "../../images/avatar.png";
 import Modal from "../Modal/modal";
-
+import Login from "../Login/login";
+import { Col, Row } from "../Grid/grid";
 class Navbar extends Component {
 	state = {
 		display: "",
@@ -16,9 +17,24 @@ class Navbar extends Component {
 		this.setState({login: true})
 	}
 
+	// clearModal = () => {
+	// 	this.displayModal()
+	// 	.then(this.setState({
+	// 		login: false
+	// 	}))
+	// }
+	// clearModal = (event) => {
+	// 	if (event.target == Modal) {
+	// 	  this.setState({login: false})
+	// 	  .then(this.setState({
+	// 		  login:false
+	// 	  }))
+	// 	}
+	//   };
 	render() {
 	return (
 		<div>
+		<Row>
 		<nav className="navbar navbar-expand-lg" style={{ backgroundImage: `url(${this.props.backgroundImage})` }}>
 		<div className="nav-links">
 			<ul className="navbar-nav">
@@ -63,23 +79,25 @@ class Navbar extends Component {
 					<input className="form-control mr-sm-2" type="search" placeholder={this.props.placeholder} aria-label="Search"></input>
 				</div>
 				<div className="search-btn">
-					<input className="arrow" type="image" src={SearchBtn} alt="Image missing..."></input>
+					<input className="arrow" type="image" src={SearchBtn} alt="search..."></input>
 				</div>
-				<li className="nav-item login">
-						<a className="nav-link login" onClick={this.displayModal} >
-					
-						login/sign up
-						</a>
-				</li>
-				<div className="avatar-div">
-					<img className="avatar-img" src={Avatar} alt="Avatar"></img>
-				</div>
+				<div>
+                <Row>
+                <li className="nav-item login">
+                    <a className="nav-link login" onClick={this.displayModal}>
+                    login/sign up
+                    </a>
+                </li>
+                <div className="avatar-div">
+                    <img className="avatar-img" src={Avatar} alt="Avatar"></img>
+                </div>
+                </Row>
+            </div>
 			</ul>
 		</div>
 	</nav>
-	{this.state.login ? <Modal /> : null
-	}
-
+	{this.state.login ? <Modal /> : null}
+	</Row>
 	</div>
 	);
 	}
