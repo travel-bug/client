@@ -15,12 +15,14 @@ class Home extends Component {
                     backgroundImage={Image}
                     placeholder="let's go places..."
                 />
-                <h1>Hello World</h1>
+                <div className="new-posts">
+                <h1>new posts</h1>
                     <Card
                         image="../images/avatar.png"
                     >
                     Hello
                     </Card>
+                </div>
             </div>
         )
     }

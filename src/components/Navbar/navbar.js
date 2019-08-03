@@ -4,10 +4,21 @@ import { Link } from "react-router-dom";
 import Logo from '../Logo/bug_icon.png';
 import SearchBtn from "../../images/search_arrow.png";
 import Avatar from "../../images/avatar.png";
+import Modal from "../Modal/modal";
 
 class Navbar extends Component {
+	state = {
+		display: "",
+		login: false
+	}
+
+	displayModal = () => {
+		this.setState({login: true})
+	}
+
 	render() {
 	return (
+		<div>
 		<nav className="navbar navbar-expand-lg" style={{ backgroundImage: `url(${this.props.backgroundImage})` }}>
 		<div className="nav-links">
 			<ul className="navbar-nav">
@@ -55,13 +66,10 @@ class Navbar extends Component {
 					<input className="arrow" type="image" src={SearchBtn} alt="Image missing..."></input>
 				</div>
 				<li className="nav-item login">
-					<Link
-						to="/login"
-						className={window.location.pathname === "/login" ? "nav-link active login" : "nav-link login"}
-					>
+						<a className="nav-link login" onClick={this.displayModal} >
+					
 						login/sign up
-						
-					</Link>
+						</a>
 				</li>
 				<div className="avatar-div">
 					<img className="avatar-img" src={Avatar} alt="Avatar"></img>
@@ -69,6 +77,10 @@ class Navbar extends Component {
 			</ul>
 		</div>
 	</nav>
+	{this.state.login ? <Modal /> : null
+	}
+
+	</div>
 	);
 	}
 }

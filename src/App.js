@@ -13,14 +13,14 @@ class App extends Component {
 
     return (
       <Router>
-        <div>
+        <div className="app-content-container">
           <Wrapper>
             <Route exact path="/" component={Home} />
             <Route exact path="/see" component={See} />
             <Route exact path="/do" component={Do} />
             <Route exact path="/eat" component={Eat} />
+            <Footer />
           </Wrapper>
-          <Footer />
         </div>
       </Router>
     );
