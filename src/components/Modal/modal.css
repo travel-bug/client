@@ -34,6 +34,7 @@
 
 .login-content {
     padding: 1rem;
+    font-size: 1rem;
 
 }
 
@@ -48,4 +49,18 @@
 }
 .password-input {
     margin-bottom: 1rem;
+}
+
+.sign-up-link {
+    cursor: pointer;
+    font-size: 1rem;
+
+}
+
+.sign-up {
+    color: rgb(43, 163, 238);
+}
+
+.sign-up:hover {
+    color: rgb(102, 196, 255);
 }

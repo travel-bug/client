@@ -10,6 +10,29 @@ class Home extends Component {
     }
     render() {
         return (
+        //     <div>
+        //     <Navbar 
+        //         backgroundImage={Image}
+        //         placeholder="let's go places..."
+        //     />
+        //     <div className="new-posts">
+        //     <Container>
+        //     <Col size="lg-12 sm-12">
+        //         <Row>
+        //             <h1>new posts</h1>
+        //         </Row>
+        //         <Row>
+        //             <Card
+        //                 image="../images/avatar.png"
+        //             >
+        //             Hello
+        //             </Card>
+        //         </Row>
+        //         </Col>
+                
+        //     </Container>
+        //     </div>
+        // </div>
             <div>
                 <Navbar 
                     backgroundImage={Image}

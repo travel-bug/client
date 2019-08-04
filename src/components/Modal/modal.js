@@ -31,18 +31,22 @@ class Modal extends Component {
                         </button>
                     </div>
                     <div className="login-content">
-                            login/sign up
+                            login
                     </div>
                     <div className="image-div">
                     <img className="login-image" src={Image}></img>
                     </div>
                     <div>
                         <input className="username-input" placeholder="username" type="text">
-
                         </input>
                         <input className="password-input" placeholder="password" type="password">
-
                         </input>
+                    </div>
+                    <div className="cool-kid">
+                        not a cool kid yet?  
+                    </div>
+                    <div className="sign-up">
+                        <a className="sign-up-link">{" "}sign up</a>
                     </div>
                 </div>
             </div>
