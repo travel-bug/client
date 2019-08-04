@@ -1,16 +1,15 @@
 
 .footer {
-  margin-top: 50px;
-  height: 105px;
-  background: blue;
+  margin-top: 150px;
+  height: 75px;
+  background: rgb(43, 163, 238);
   bottom: 0;
 }
   
   .footer div {
-    margin-top: 10px;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 25px;
-    background: red;
+    padding: 20px 0;
+    text-align: center;
   }
