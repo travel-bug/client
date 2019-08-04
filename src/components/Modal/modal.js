@@ -5,7 +5,7 @@ import Image from "../../images/avatar.png";
 class Modal extends Component {
 
     state = {
-        display: "inline-block"
+        display: ""
     }
 
     // clearModal = (event) => {
@@ -14,26 +14,35 @@ class Modal extends Component {
     //         this.setState({display: "none"})
     //     }
     // }
-    clearModal = () => {
-            this.setState({display: "none"})
+    // clearModal = () => {
+    //         this.setState({
+    //             display: "none"
+    //         })
         
-    }
+    // }
 
     render() {
         return (
-            <div class="modal" style={{display: `${this.state.display}`}}>
-            
-                <div id="result" class="modal-content" >
+            <div className="modal">
+                <div id="result" className="modal-content" >
                     <div>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onClick={this.clearModal}>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.props.onClick}>
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div className="login-content">
-                            login or sign up
+                            login/sign up
                     </div>
                     <div className="image-div">
                     <img className="login-image" src={Image}></img>
+                    </div>
+                    <div>
+                        <input className="username-input" placeholder="username" type="text">
+
+                        </input>
+                        <input className="password-input" placeholder="password" type="password">
+
+                        </input>
                     </div>
                 </div>
             </div>

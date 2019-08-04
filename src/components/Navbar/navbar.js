@@ -5,7 +5,7 @@ import Logo from '../Logo/bug_icon.png';
 import SearchBtn from "../../images/search_arrow.png";
 import Avatar from "../../images/avatar.png";
 import Modal from "../Modal/modal";
-import Login from "../Login/login";
+// import Login from "../Login/login";
 import { Col, Row } from "../Grid/grid";
 class Navbar extends Component {
 	state = {
@@ -16,6 +16,15 @@ class Navbar extends Component {
 	displayModal = () => {
 		this.setState({login: true})
 	}
+
+	clearModal = event => {
+		const modal = document.querySelector(".modal");
+		console.log(this.state);
+			this.setState({
+				display: "none",
+				login: false
+			})
+	}	
 
 	// clearModal = () => {
 	// 	this.displayModal()
@@ -96,7 +105,12 @@ class Navbar extends Component {
 			</ul>
 		</div>
 	</nav>
-	{this.state.login ? <Modal /> : null}
+
+	{this.state.login ? <Modal 
+	onClick={this.clearModal}
+	/> 
+	: null}
+
 	</Row>
 	</div>
 	);

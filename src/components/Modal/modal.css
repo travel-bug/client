@@ -1,6 +1,6 @@
 :root {
     --modal-duration: 1s;
-    
+
 }
 
 .modal {
@@ -41,4 +41,11 @@
     height: 100px;
     width: 100px;
 
+}
+
+.username-input {
+    margin: 1rem auto;
+}
+.password-input {
+    margin-bottom: 1rem;
 }
