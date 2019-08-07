@@ -5,7 +5,7 @@ import "./card.css";
 function Card(props) {
   return (
     <div className="card">
-		<img className="card-image" src={props.image} />
+		<img className="card-image" src={props.pic} />
 		<div className="card-body">
 			<p>chicago</p>
 			<p>clark alms</p>
