@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import Logo from "../Logo/logo";
 import NavTabs from "../NavTabs/navTabs.js";
-import Login from "../Login/login";
 import LoginPic from "../LoginPic/loginPic";
 import Avatar from "../../images/avatar.png";
-import SearchBar from "../SearchBar/search";
 import Tabs from "../NavTabs/navTabs.json";
 import "./navbar2.css";
 
@@ -15,8 +13,8 @@ class Navbar2 extends Component {
     }
     render() {
         return (
-            <div>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="navbar-content">
+                <nav class="navbar navbar-expand-lg">
                     <a class="navbar-brand" href="#">
                         <Logo/>
                     </a>

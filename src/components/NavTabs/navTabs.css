@@ -1,3 +1,15 @@
 .nav-tab-5 {
-    float: right;
+    position: absolute;
+    right: 60px;
+}
+.nav-link-5 {
+    font-size: 17px;
+}
+
+.nav-tab-1, .nav-tab-2, .nav-tab-3, .nav-tab-4 {
+    margin: 0 20px;
+}
+
+a:hover {
+    text-decoration: none;
 }

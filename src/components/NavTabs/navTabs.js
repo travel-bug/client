@@ -5,7 +5,7 @@ function NavTabs(props) {
     return (
         <div>
             <li className={"nav-tab-" + props.id}>
-                <a class="nav-link" href="#">{props.title}</a>
+                <a class={"nav-link-" + props.id} href="#">{props.title}</a>
             </li>
         </div>
     )
