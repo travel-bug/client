@@ -7,8 +7,24 @@ import Pic from "../images/chicago_bean.jpg";
 
 class Home extends Component {
     state ={
-        image: ""
+        pic: "",
+        username: "",
+        password: ""
     }
+  
+//   loginSubmit = event => {
+//     event.preventDefault();
+//     API.getDogsOfBreed(this.state.search)
+//       .then(res => {
+//         if (res.data.status === "error") {
+//           throw new Error(res.data.message);
+//         }
+//         this.setState({ results: res.data.message, error: "" });
+//       })
+//       .catch(err => this.setState({ error: err.message }));
+//   };
+
+
     render() {
         return (
         //     <div>
@@ -49,7 +65,7 @@ class Home extends Component {
                     </Row>
                     <Row>
                         <Card
-                            image={Pic}
+                            pic={Pic}
                         >
                         Hello
                         </Card>

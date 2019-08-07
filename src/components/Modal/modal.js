@@ -42,6 +42,11 @@ class Modal extends Component {
                         <input className="password-input" placeholder="password" type="password">
                         </input>
                     </div>
+                    <div>
+                        <button type="button" className="login-btn" onClick={this.props.onClick}>
+                            <span aria-hidden="true">login</span>
+                        </button>
+                    </div>
                     <div className="cool-kid">
                         not a cool kid yet?  
                     </div>

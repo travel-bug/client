@@ -10,7 +10,9 @@ import { Col, Row } from "../Grid/grid";
 class Navbar extends Component {
 	state = {
 		display: "",
-		login: false
+		login: false,
+		username: "",
+		password: ""
 	}
 
 	displayModal = () => {
