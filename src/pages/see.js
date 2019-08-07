@@ -3,20 +3,21 @@ import Navbar from "../components/Navbar/navbar";
 import Image from "../images/Project3_see.jpg";
 import {Container, Col, Row} from "../components/Grid/grid";
 import Card from "../components/Card/card";
+import Hero from "../components/Hero/hero";
 
 
 function See() {
     return (
         <div>
-            <Navbar 
+            <Hero
                 backgroundImage={Image}
-                placeholder="let's see the world..."
             />
-            <div className="new-posts">
-                <Container>
+            <Container>
                 <Col size="lg-12 sm-12">
                     <Row>
-                        <h1>new posts</h1>
+                        <Col size="lg-12 sm-12">
+                            <h1>new posts</h1>
+                        </Col>
                     </Row>
                     <Row>
                         <Card
@@ -25,10 +26,8 @@ function See() {
                         Hello
                         </Card>
                     </Row>
-                    </Col>
-                    
-                </Container>
-                </div>
+                </Col>
+            </Container>
         </div>
     )
 }

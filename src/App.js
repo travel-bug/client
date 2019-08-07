@@ -7,12 +7,17 @@ import Do from "./pages/do";
 import Eat from "./pages/eat";
 import Footer from "./components/Footer/footer";
 import Wrapper from "./components/Wrapper/wrapper";
+import Navbar2 from './components/Navbar2/navbar2';
+// import Navbar from './components/Navbar/navbar';
 class App extends Component {
   
   render() {
 
     return (
+      
       <Router>
+      <Navbar2 />
+      
         <div className="app-content-container">
           <Wrapper>
             <Route exact path="/" component={Home} />
