@@ -3,7 +3,10 @@ import Bug from "./bug_icon.png";
 import "./logo.css";
 
 function Logo() {
-    return <img src={Bug} className="bug-logo" alt="Logo" />
+    return <a class="navbar-brand" href="/">
+            <img src={Bug} className="bug-logo" alt="Logo" />
+            </a>
+    
 }
 
 export default Logo;
