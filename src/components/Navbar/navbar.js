@@ -1,20 +1,58 @@
-import React from "react";
+import React, { Component } from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
-// import Image from '../../images/Project3_home.jpg';
 import Logo from '../Logo/bug_icon.png';
 import SearchBtn from "../../images/search_arrow.png";
 import Avatar from "../../images/avatar.png";
+import Modal from "../Modal/modal";
+// import Login from "../Login/login";
+import { Col, Row } from "../Grid/grid";
+class Navbar extends Component {
+	state = {
+		display: "",
+		login: false,
+		username: "",
+		password: ""
+	}
 
-function Navbar(props) {
-    return (
-      <nav className="navbar navbar-expand-lg" style={{ backgroundImage: `url(${props.backgroundImage})` }}>
-        <div className="nav-links">
+	displayModal = () => {
+		this.setState({login: true})
+	}
+
+	clearModal = event => {
+		const modal = document.querySelector(".modal");
+		console.log(this.state);
+			this.setState({
+				display: "none",
+				login: false
+			})
+	}	
+
+	// clearModal = () => {
+	// 	this.displayModal()
+	// 	.then(this.setState({
+	// 		login: false
+	// 	}))
+	// }
+	// clearModal = (event) => {
+	// 	if (event.target == Modal) {
+	// 	  this.setState({login: false})
+	// 	  .then(this.setState({
+	// 		  login:false
+	// 	  }))
+	// 	}
+	//   };
+	render() {
+	return (
+		<div>
+		<Row>
+		<nav className="navbar navbar-expand-lg" style={{ backgroundImage: `url(${this.props.backgroundImage})` }}>
+		<div className="nav-links">
 			<ul className="navbar-nav">
 				<li className="nav-item logo">
 					<Link className="navbar-brand" to="/">
 						<img src={Logo} className="logo" alt="Logo"></img>
-        			</Link>
+					</Link>
 				</li>
 				<li className="nav-item home">
 					<Link
@@ -49,27 +87,36 @@ function Navbar(props) {
 					</Link>
 				</li>
 				<div className="search">
-					<input className="form-control mr-sm-2" type="search" placeholder={props.placeholder} aria-label="Search"></input>
+					<input className="form-control mr-sm-2" type="search" placeholder={this.props.placeholder} aria-label="Search"></input>
 				</div>
 				<div className="search-btn">
-					<input className="arrow" type="image" src={SearchBtn} alt="Image missing..."></input>
+					<input className="arrow" type="image" src={SearchBtn} alt="search..."></input>
 				</div>
-				<li className="nav-item login">
-					<Link
-						to="/login"
-						className={window.location.pathname === "/login" ? "nav-link active login" : "nav-link login"}
-					>
-						login/sign up
-						
-					</Link>
-				</li>
-				<div className="avatar-div">
-					<img className="avatar-img" src={Avatar} alt="Avatar"></img>
-				</div>
+				<div>
+                <Row>
+                <li className="nav-item login">
+                    <a className="nav-link login" onClick={this.displayModal}>
+                    login/sign up
+                    </a>
+                </li>
+                <div className="avatar-div">
+                    <img className="avatar-img" src={Avatar} alt="Avatar"></img>
+                </div>
+                </Row>
+            </div>
 			</ul>
-        </div>
-    </nav>
-  );
+		</div>
+	</nav>
+
+	{this.state.login ? <Modal 
+	onClick={this.clearModal}
+	/> 
+	: null}
+
+	</Row>
+	</div>
+	);
+	}
 }
 
 export default Navbar;

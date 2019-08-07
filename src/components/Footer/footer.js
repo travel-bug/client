@@ -3,8 +3,8 @@ import "./footer.css";
 
 function Footer() {
   return (
-    <footer className="footer fixed-bottom">
-      <span>the bug 2019</span>
+    <footer className="footer">
+      <div>the bug 2019</div>
     </footer>
   );
 }
