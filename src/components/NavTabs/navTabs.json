@@ -1,19 +1,23 @@
 [
     {
         "id": 1,
-        "title": "home"
+        "title": "home",
+        "route": "/"
     },
     {
         "id": 2,
-        "title": "see"
+        "title": "see",
+        "route": "/see"
     },
     {
         "id": 3,
-        "title": "do"
+        "title": "do",
+        "route":"/do"
     },
     {
         "id": 4,
-        "title": "eat"
+        "title": "eat",
+        "route": "/eat"
     },
     {
         "id": 5,

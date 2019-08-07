@@ -9,12 +9,7 @@ import Card from "../components/Card/card";
 function Do() {
     return (
         <div>
-            <Navbar 
-                backgroundImage={Image}
-                placeholder="let's do this..."
-            />
-            <div className="new-posts">
-                <Container>
+            <Container>
                 <Col size="lg-12 sm-12">
                     <Row>
                         <h1>new posts</h1>
@@ -26,10 +21,8 @@ function Do() {
                         Hello
                         </Card>
                     </Row>
-                    </Col>
-                    
-                </Container>
-                </div>
+                </Col>
+            </Container>
         </div>
     )
 }

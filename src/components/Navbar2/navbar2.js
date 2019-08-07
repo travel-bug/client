@@ -11,13 +11,12 @@ class Navbar2 extends Component {
         Tabs,
         pic: Avatar
     }
+    
     render() {
         return (
             <div className="navbar-content">
                 <nav class="navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="#">
-                        <Logo/>
-                    </a>
+                    <Logo/>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -28,6 +27,7 @@ class Navbar2 extends Component {
                                 id={Tab.id}
                                 key={Tab.id}
                                 title={Tab.title}
+                                route={Tab.route}
                             />
                         ))}
                             <LoginPic 

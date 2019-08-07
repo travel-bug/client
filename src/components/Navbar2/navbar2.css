@@ -2,6 +2,7 @@
 .navbar-content {
     position: relative;
     background-color: black;
+    /* background-color: transparent; */
 }
 .navbar {
     height: 4rem;
