@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Hero from "../components/Hero/hero";
 import Navbar from "../components/Navbar/navbar";
 import Image from "../images/Project3_home.jpg";
 import {Container, Col, Row} from "../components/Grid/grid";
@@ -51,9 +52,8 @@ class Home extends Component {
         //     </div>
         // </div>
             <div>
-                <Navbar 
+                <Hero 
                     backgroundImage={Image}
-                    placeholder="let's go places..."
                 />
                 <div className="new-posts">
                 <Container>

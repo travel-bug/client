@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": "home"
+    },
+    {
+        "id": 2,
+        "title": "see"
+    },
+    {
+        "id": 3,
+        "title": "do"
+    },
+    {
+        "id": 4,
+        "title": "eat"
+    },
+    {
+        "id": 5,
+        "title": "login/sign up"
+    }
+]
