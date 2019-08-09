@@ -1,68 +1,163 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Travel Bug
+Travel Bug is a site intended for users to share their experiences at local restaurants/bars, events, or sights.  Users can create an account and post a picture about a certain aspect of the activity they experienced and write a short comment to share with the world.
 
-## Available Scripts
+# Documentation
 
-In the project directory, you can run:
+## React Components
+...
 
-### `npm start`
+## Data Layer
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The data layer consists of several chunks of code designed to be imported to any react component that needs to use its functionality.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+1. `auth.js`
 
-### `npm test`
+   This file exports an object called `AuthService` and is responsible for sending all http requests associated with authentication.
+   
+   ```
+   // Sends an http POST request to the sign up endpoint with a payload of three parameters:
+   // username, password, and email
+   AuthService.sendSignupRequest = (params) => {...}` 
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   // Similar to the above function, but the sign in function only requires an email and password params
+   AuthService.sendSigninRequest = (params) => {...}
 
-### `npm run build`
+   // Sends a signout request - no params required
+   AuthService.sendSignoutRequest = () => {...}
+   ```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. `data.js`
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+   This file exports an object called `DataService` and is responsible for sending all http requests associated with data stored in the MySQL database
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```
+   // This function requests the most recent posts from the API to display on the home page
+   // ** The Payload of the request is not yet known**
+   DataService.getTopPosts = () => {...}
 
-### `npm run eject`
+   // Sends a POST request that creates a new post on the travel bug app
+   // Requires three properties in the params object: user_id, content, and place_id
+   DataService.newPost = (params) => {...}
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. `firebase.js`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   Imports the firebase npm package and initializes itself to the travel bug firebase project, which is where all images for the app will be stored.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   Note the API keys in this file do not need to be protected because they are public keys
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. `pubsub.js`
 
-## Learn More
+   Exports an object called `Pubsub` and serves as the middleman for communication between unrelated react components
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```
+   Pubsub.publish = (notif, data) => {...}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   Pubsub.subscribe = (notif, subscriber, cb) => {...}
 
-### Code Splitting
+   Pubsub.unsubscribe = (notif, subscriber) => {...}
+   ```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+   The simplest way to use this object is for a component to subscribe to a specific event in the `componentDidMount()` lifecycle function and unsubscribe in `componentWillUnmount()`.  Note it is very important that all components that subscribe to an event always unsubscribe in the unmount function.
 
-### Analyzing the Bundle Size
+   Example use case for telling a modal component to show/hide via Pubsub:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+   `modal.js`
+   ```
+   import React from 'react';
+   import Modal from 'react-modal';
+   import Pubsub from './pubsub';
+   import { NOTIF } from './constants';
 
-### Making a Progressive Web App
+   export class Modal extends Component {
+     
+     state = {
+       modalIsOpen: false
+     };
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+     // subscribing to the SHOW_MODAL event will cause the Pubsub object to call the showModal function whenever any component publishes on that event.
+     componentDidMount() {
+       Pubsub.subscribe(NOTIF.SHOW_MODAL, this, showModal);
+     }
 
-### Advanced Configuration
+     // unsubscribing in the unmount function is very important as the app will have memory leaks if you do not unsubscribe
+     componentWillUnmount() {
+       Pubsub.unsubscribe(NOTIF.SHOW_MODAL, this);
+     }
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+     showModal = () => {
+       this.setState({
+         modalIsOpen: true
+       });
+     }
 
-### Deployment
+     closeModal = () => {
+       this.setState({
+         modalIsOpen: false
+       });
+     }
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+     render() {
+       return (
+         <Modal
+           isOpen={this.state.modalIsOpen}
+           onRequestClose={this.closeModal}
+         >
+           {/* MODAL CONTENT /*}
+         </Modal>
+       );
+     }
+   }
+   ```
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+   `navbar.js`
+   ```
+   import React from 'react';
+   import Pubsub from './pubsub';
+   import { NOTIF } from './constants';
+
+   export class Navbar extends Component {
+     
+     showModal = () => {
+       // publish an event on the NOTIF.SHOW_MODAL subscription for all components listening to that specific notification constant
+       // the second parameter is null in this case because the modal doesn't need any data from the Navbar
+       Pubsub.publish(NOTIF.SHOW_MODAL, null);
+     }
+
+     render() {
+       return (
+         <nav>
+           <NavItem />
+           <NavItem />
+           <NavItem />
+           {/* we want the modal to show on screen when clicking the button /*}
+           <button onClick={showModal}>
+             Sign In/Sign Up
+           </button>
+         </nav>
+       );
+     }
+   }
+   ```
+
+   The above components do not need to be related in the DOM tree for the Pubsub relationship to work.  When the navbar calls `Pubsub.publish()` on the `NOTIF.SHOW_MODAL` event, any component subscribed to that event (e.g. the modal component) will run the callback function associated with its subscription.
+
+5. `constants.js`
+
+   A catch-all for reusable primitive values, i.e. `NOTIF` properties used in the Pubsub relationship, relative API routes used in `AuthService` and `DataService`, or any other use case we encounter.
+
+   The Pubsub example above demonstrates how values are stored in the `NOTIF` object, and relative API routes are stored as follows:
+
+   ```
+   export const API_GET = {
+     top_posts: '/api/top_posts',
+     ...
+   };
+
+   export const API_POST = {
+     login: '/api/login',
+     signup: '/api/signup',
+     ...
+   };
+   ```
