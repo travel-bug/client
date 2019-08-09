@@ -4,24 +4,7 @@ import Image from "../../images/avatar.png";
 
 class Modal extends Component {
 
-    state = {
-        display: ""
-    }
-
-    // clearModal = (event) => {
-    //     const modal = document.querySelector(".modal");
-    //     if(event.target == modal){
-    //         this.setState({display: "none"})
-    //     }
-    // }
-    // clearModal = () => {
-    //         this.setState({
-    //             display: "none"
-    //         })
-        
-    // }
-
-    render() {
+    render(props) {
         return (
             <div className="modal">
                 <div id="result" className="modal-content" >
@@ -37,13 +20,13 @@ class Modal extends Component {
                     <img className="login-image" src={Image}></img>
                     </div>
                     <div>
-                        <input className="username-input" placeholder="username" type="text">
+                        <input className="username-input" placeholder="username" name="username" type="text" value={this.props.username} onChange={this.props.usernameChange}>
                         </input>
-                        <input className="password-input" placeholder="password" type="password">
+                        <input className="password-input" placeholder="password" name="password" type="password" value={this.props.password} onChange={this.props.passwordChange}>
                         </input>
                     </div>
                     <div>
-                        <button type="button" className="login-btn" onClick={this.props.onClick}>
+                        <button type="button" className="login-btn" onClick={this.props.submitLogin}>
                             <span aria-hidden="true">login</span>
                         </button>
                     </div>

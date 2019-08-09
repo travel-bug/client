@@ -19,14 +19,14 @@ class Navbar extends Component {
 		this.setState({login: true})
 	}
 
-	clearModal = event => {
-		const modal = document.querySelector(".modal");
-		console.log(this.state);
-			this.setState({
-				display: "none",
-				login: false
-			})
-	}	
+	// clearModal = event => {
+	// 	const modal = document.querySelector(".modal");
+	// 	console.log(this.state);
+	// 		this.setState({
+	// 			display: "none",
+	// 			login: false
+	// 		})
+	// }	
 
 	// clearModal = () => {
 	// 	this.displayModal()
