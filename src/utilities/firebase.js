@@ -19,6 +19,16 @@ var storage = firebase.storage();
 var storageRef = firebase.storage().ref();
 var usersRef = storageRef.child('users');
 
+/** @module Firebase */
+
+/**
+ * @memberof module:Firebase
+ * @method uploadImage
+ * @param image The image file uploaded by the user
+ * @param {String} user_id The users id corresponding to the primary key in MySQL
+ * @param {String} imageName The name to be assigned to the uploaded image in the firebase storage bucket
+ * @param cb Callback function executed upon successful image upload that takes the URL of the newly uploaded image
+ */
 const uploadImage = (image, user_id, imageName, cb) => {
   var uploadTask = usersRef.child(`/${user_id}/${imageName}`).put(image);
 
