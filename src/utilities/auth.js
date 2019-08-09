@@ -12,11 +12,15 @@ var AuthService = {};
       password: params.password,
       email: params.email
     };
-    axios.post(API_POST.signup, authParams).then(response => {
-      // set important response data to a variable or coordinate with context
-      console.log(response);
-    }).catch(error => {
-      console.log(error);
+    return new Promise((resolve, reject) => {
+      axios.post(API_POST.signup, authParams).then(response => {
+        // set important response data to a variable or coordinate with context
+        console.log(response);
+        resolve();
+      }).catch(error => {
+        console.log(error);
+        reject(error);
+      });
     });
   }
 
@@ -25,19 +29,27 @@ var AuthService = {};
       username: params.username,
       password: params.password
     };
-    axios.post(API_POST.login, authParams).then(response => {
-      // set important response data to a variable or coordinate with context
-      console.log(response);
-    }).catch(error => {
-      console.log(error);
+    return new Promise((resolve, reject) => {
+      axios.post(API_POST.login, authParams).then(response => {
+        // set important response data to a variable or coordinate with context
+        console.log(response);
+        resolve();
+      }).catch(error => {
+        console.log(error);
+        reject(error);
+      });
     });
   }
 
   obj.sendSignoutRequest = () => {
-    axios.post(API_POST.signout).then(response => {
-      console.log(response);
-    }).catch(error => {
-      console.log(error);
+    return new Promise((resolve, reject) => {
+      axios.post(API_POST.signout).then(response => {
+        console.log(response);
+        resolve();
+      }).catch(error => {
+        console.log(error);
+        reject(error);
+      });
     });
   }
 })(AuthService);
