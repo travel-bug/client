@@ -1,0 +1,21 @@
+.login-div a {
+    font-size: 17px;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.login-div {
+    position: absolute;
+    right: 75px;
+    color: white;
+}
+.login-div:hover {
+    cursor: pointer;
+    color: rgb(43, 163, 238);
+}
+
+a .login {
+    font-size: 17px;
+    color: white;
+    margin-bottom: 8px;
+}
