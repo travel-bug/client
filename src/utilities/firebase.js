@@ -19,7 +19,7 @@ var storage = firebase.storage();
 var storageRef = firebase.storage().ref();
 var usersRef = storageRef.child('users');
 
-const uploadImage = (image, user_id, imageName) => {
+const uploadImage = (image, user_id, imageName, cb) => {
   var uploadTask = usersRef.child(`/${user_id}/${imageName}`).put(image);
 
   // Listen for state changes, errors, and completion of the upload.
@@ -58,6 +58,7 @@ const uploadImage = (image, user_id, imageName) => {
       // Upload completed successfully, now we can get the download URL
       uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
         console.log('File available at', downloadURL);
+        cb(downloadURL);
       });
     }
   );
