@@ -7,5 +7,4 @@ export const API_POST = {
 
 export const API_GET = {
   top_posts: '/api/top_posts',
-  search
 }
