@@ -36,7 +36,12 @@ The data layer consists of several chunks of code designed to be imported to any
    DataService.getTopPosts = () => {...}
 
    // Sends a POST request that creates a new post on the travel bug app
-   // Requires three properties in the params object: user_id, content, and place_id
+   // Requires several properties properties in the params object: 
+   // user_id - corresponds to the primary key in the MySQL database, 
+   // content - text content written by the user, 
+   // place_id - corresponds to the primary key in the places table in MySQL,
+   // image - image file submitted by the user,
+   // postTitle - title of the post written by the user
    DataService.newPost = (params) => {...}
    ```
 
@@ -45,6 +50,16 @@ The data layer consists of several chunks of code designed to be imported to any
    Imports the firebase npm package and initializes itself to the travel bug firebase project, which is where all images for the app will be stored.
 
    Note the API keys in this file do not need to be protected because they are public keys
+
+   The `uploadImage` function takes three inputs and a callback function to upload an image to the firebase storage bucket.  
+   `image`: the file uploaded by the user.
+   `user_id`: the user_id corresponding to the primary key in our MySQL database
+   `imageName`: arbitrary name for the image - likely the title of the user's post
+   `cb`: function invoked upon a successful image upload which takes in the image URL
+
+   ```
+   uploadImage = (image, user_id, imageName, cb) => {...}
+   ```
 
 4. `pubsub.js`
 
