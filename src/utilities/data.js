@@ -4,6 +4,7 @@ import { uploadImage } from './firebase';
 
 /** Global data object used to send requests to the API */
 var DataService = {};
+const baseUrl = process.env.REACT_APP_BASE_URL || '/';
 
 /** 
  * Anonymous IIFE that creates the AuthService object
@@ -17,7 +18,7 @@ var DataService = {};
    * @returns {Promise} Promise object resolves to an array of objects containing the most recent posts made by users
    */
   obj.getTopPosts = () => {
-    axios.get(API_GET.top_posts).then(response => {
+    axios.get(baseUrl + API_GET.top_posts).then(response => {
       console.log(response);
       // set the top posts to a variable or coordinate with context
     }).catch(error => {
@@ -47,7 +48,7 @@ var DataService = {};
         image_url: imageUrl
       };
       
-      axios.post(API_POST.new_post, newPostParams).then(response => {
+      axios.post(baseUrl + API_POST.new_post, newPostParams).then(response => {
         console.log(response);
       }).catch(error => {
         console.log(error);
