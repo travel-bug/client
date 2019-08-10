@@ -14,44 +14,21 @@ class Navbar2 extends Component {
     state = {
         Tabs,
         pic: Avatar,
-        display: "",
-        login: false,
-        username: "",
-        password: ""
+        modal: false,
     }
-    
-      handleInputChange = event => {
-        // Destructure the name and value properties off of event.target
-        // Update the appropriate state
-        const { name, value } = event.target;
-        this.setState({
-          [name]: value
-        });
-        console.log("username: " + this.state.username + " password: " + this.state.password);
-      };
-    
-      loginSubmit = () => {
-        AuthService.sendSigninRequest({
-            username: this.state.username, 
-            password: this.state.password
-        })
-          .then(res => this.setState({ recipes: res.data }))
-          .catch(err => console.log(err));
-      };
-    
     displayModal = () => {
-        this.setState({login: true})
+        this.setState({
+            modal: true
+        })
     }
 
-    clearModal = event => {
-        const modal = document.querySelector(".modal");
-        console.log(this.state);
-            this.setState({
-                display: "none",
-                login: false
-            })
-    }	
-    
+    clearModal = () => {
+        this.setState({
+            modal: false
+        })
+    }
+
+
     render() {
         return (
             <div className="navbar-content">
@@ -75,13 +52,8 @@ class Navbar2 extends Component {
                         </ul>
                     </div>
                 </nav>
-                {this.state.login ? <Modal 
+                {this.state.modal ? <Modal 
 	            onClick={this.clearModal}
-                username={this.state.username}
-                password={this.state.password}
-                usernameChange={this.handleInputChange}
-                passwordChange={this.handleInputChange}
-                loginSubmit={this.loginSubmit}
 	            /> 
 	            : null}
             </div>
