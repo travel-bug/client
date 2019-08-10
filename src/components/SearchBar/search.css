@@ -1,5 +1,14 @@
 .search-div {
-    margin: auto;
-    width: 50%;
+    /* position: absolute; */
+    width: 100%;
     
+
+}
+
+#search-input {
+    width: auto;
+}
+
+button.btn {
+    background-color: blue;
 }

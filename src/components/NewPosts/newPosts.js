@@ -12,9 +12,9 @@ class NewPosts extends Component {
             <Container>
             <Col size="lg-12 sm-12">
                 <Row>
-                    
-                        <div className="new-posts">new posts</div>
-                    
+                    <div className="new-posts">
+                    <p>new posts</p>
+                    </div>
                 </Row>
                 <Row>
                     <Card
