@@ -6,7 +6,7 @@ import LoginPic from "../LoginPic/loginPic";
 import Avatar from "../../images/avatar.png";
 import Tabs from "../NavTabs/navTabs.json";
 import Modal from "../Modal/modal";
-// import AuthService from "../../utilities/auth";
+import AuthService from "../../utilities/auth";
 import "./navbar2.css";
 
 
