@@ -6,7 +6,7 @@ import LoginPic from "../LoginPic/loginPic";
 import Avatar from "../../images/avatar.png";
 import Tabs from "../NavTabs/navTabs.json";
 import Modal from "../Modal/modal";
-import AuthService from "../../utilities/auth";
+// import { Container, Row, Col } from "../Grid/grid";
 import "./navbar2.css";
 
 
@@ -32,6 +32,7 @@ class Navbar2 extends Component {
     render() {
         return (
             <div className="navbar-content">
+            
                 <nav class="navbar navbar-expand-lg">
                     <Logo/>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,6 +57,7 @@ class Navbar2 extends Component {
 	            onClick={this.clearModal}
 	            /> 
 	            : null}
+
             </div>
         );
     }

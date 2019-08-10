@@ -36,9 +36,9 @@ class SignUpForm extends Component {
                         sign up
                 </div>
                 <div>
-                    <input className="firstName-input" placeholder="firstName" name="firstName" type="text" value={this.state.firstName} onChange={this.handleInputChange}>
+                    <input className="firstName-input" placeholder="first name" name="firstName" type="text" value={this.state.firstName} onChange={this.handleInputChange}>
                     </input>
-                    <input className="lastName-input" placeholder="lastName" name="lastName" type="text" value={this.state.lastName} onChange={this.handleInputChange}>
+                    <input className="lastName-input" placeholder="last name" name="lastName" type="text" value={this.state.lastName} onChange={this.handleInputChange}>
                     </input>
                     <input className="email-input" placeholder="email" name="email" type="email" value={this.state.email} onChange={this.handleInputChange}>
                     </input>
