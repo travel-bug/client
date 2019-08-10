@@ -3,6 +3,7 @@ import { API_POST } from './constants';
 
 /** Global authentication object used to send requests to the API */
 var AuthService = {};
+const baseUrl = process.env.REACT_APP_BASE_URL || '/';
 
 /** 
  * Anonymous IIFE that creates the AuthService object
@@ -29,8 +30,9 @@ var AuthService = {};
       firstName: params.firstName,
       lastName: params.lastName
     };
+    console.log(baseUrl + API_POST.signup);
     return new Promise((resolve, reject) => {
-      axios.post(API_POST.signup, authParams).then(response => {
+      axios.post(baseUrl + API_POST.signup, authParams).then(response => {
         // set important response data to a variable or coordinate with context
         console.log(response);
         resolve();
@@ -56,7 +58,7 @@ var AuthService = {};
       password: params.password
     };
     return new Promise((resolve, reject) => {
-      axios.post(API_POST.login, authParams).then(response => {
+      axios.post(baseUrl + API_POST.login, authParams).then(response => {
         // set important response data to a variable or coordinate with context
         console.log(response);
         resolve();
@@ -75,7 +77,7 @@ var AuthService = {};
    */
   obj.sendSignoutRequest = () => {
     return new Promise((resolve, reject) => {
-      axios.post(API_POST.signout).then(response => {
+      axios.post(baseUrl + API_POST.signout).then(response => {
         console.log(response);
         resolve();
       }).catch(error => {
