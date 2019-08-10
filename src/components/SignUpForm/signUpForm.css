@@ -1,0 +1,14 @@
+input {
+    margin: 1rem auto;
+}
+
+button.signup-btn {
+    margin-bottom: 1rem;
+    padding: 0 10px; 
+    border-radius: 10px;
+    background-color: rgb(43, 163, 238);
+}
+
+button.signup-btn:hover {
+    background-color: rgb(102, 196, 255);
+}
