@@ -17,13 +17,17 @@ var AuthService = {};
    * @param {String} params.username The user's username/alias
    * @param {String} params.email The user's email address
    * @param {String} params.password The user's password
+   * @param {String} params.firstName The user's first name
+   * @param {String} params.lastName The user's last name
    * @returns {Promise} Promise object resolves to the newly created user's id and rejects an error object
    */
   obj.sendSignupRequest = (params) => {
     let authParams = {
       username: params.username,
       password: params.password,
-      email: params.email
+      email: params.email,
+      firstName: params.firstName,
+      lastName: params.lastName
     };
     return new Promise((resolve, reject) => {
       axios.post(API_POST.signup, authParams).then(response => {
