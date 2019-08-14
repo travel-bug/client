@@ -23,7 +23,7 @@ class App extends Component {
             <Route exact path="/see" component={See} />
             <Route exact path="/do" component={Do} />
             <Route exact path="/eat" component={Eat} />
-			<Route exact path="/profile" component={Profile} />
+			      <Route exact path="/profile" component={Profile} />
             <Footer />
           </Wrapper>
         </div>

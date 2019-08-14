@@ -21,7 +21,7 @@ class NewPosts extends Component {
             <Col size="lg-12 sm-12">
                 <Row>
                     <div className="new-posts">
-                    <p>new posts</p>
+                    <p>yumm...</p>
                     </div>
                 </Row>
                 <Row>

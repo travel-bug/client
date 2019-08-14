@@ -1,8 +1,8 @@
 .navbar-content {
     width: 100%;
-    position: absolute;
+    position: relative;
     z-index: 11;
-    background-color: black;
+    background-color: rgb(53, 53, 53);
 }
 .navbar {
     height: 65px;
