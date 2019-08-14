@@ -2,10 +2,10 @@
     width: 100%;
     position: absolute;
     z-index: 11;
-    background-color: transparent;
+    background-color: black;
 }
 .navbar {
-    height: 4rem;
+    height: 55px;
     padding: 1rem;
 }
 

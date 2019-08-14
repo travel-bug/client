@@ -6,6 +6,10 @@ import "./newPosts.css";
 
 
 class NewPosts extends Component {
+    state = {
+        username: "clark alms",
+        place: "chicago"
+    }
     render() {
         return (
             <div className="new-posts">
@@ -19,8 +23,9 @@ class NewPosts extends Component {
                 <Row>
                     <Card
                         pic={Pic}
+                        place={this.state.place}
+                        person={this.props.username}
                     >
-                    Hello
                     </Card>
                 </Row>
                 </Col>
