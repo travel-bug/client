@@ -12,6 +12,7 @@
   }
   .card-body {
     text-align: left;
+    padding: 10px;
   }
   .card-image {
     height: 100%;
@@ -24,4 +25,24 @@
 
   .card-username {
     font-size: 15px;
+    float: left;
+    margin: 13px 8px;
+  }
+
+  .profile-pic {
+    height: 35px;
+    width: 35px;
+    float: left;
+    margin: 7px;
+  }
+
+  .fas {
+    float: left;
+    size: 50%;
+  }
+
+  .card-place {
+    font-size: 15px;
+    float: left;
+    margin: 13px 8px;
   }

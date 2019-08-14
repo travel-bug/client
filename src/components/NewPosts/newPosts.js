@@ -2,14 +2,18 @@ import React, { Component } from 'react';
 import Card from "../Card/card";
 import { Col, Row, Container } from "../Grid/grid";
 import Pic from "../../images/chicago_bean.jpg";
+import Posts from "../NewPosts/newPosts.json";
+import Avatar from "../../images/avatar.png";
 import "./newPosts.css";
 
 
 class NewPosts extends Component {
     state = {
-        username: "clark alms",
-        place: "chicago"
+        profilePic: Avatar,
+        pic: Pic,
+        posts: Posts
     }
+
     render() {
         return (
             <div className="new-posts">
@@ -21,12 +25,16 @@ class NewPosts extends Component {
                     </div>
                 </Row>
                 <Row>
+                    {this.state.posts.map(post => (
                     <Card
-                        pic={Pic}
-                        place={this.state.place}
-                        person={this.props.username}
+                        pic={this.state.pic}
+                        id={post.id}
+                        profilePic={this.state.profilePic}
+                        person={post.person}
+                        place={post.place}
                     >
                     </Card>
+                    ))}
                 </Row>
                 </Col>
                 
