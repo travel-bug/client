@@ -31,6 +31,7 @@ class NewPosts extends Component {
                         id={post.id}
                         profilePic={this.state.profilePic}
                         person={post.person}
+                        likes={post.likes}
                         place={post.place}
                     >
                     </Card>

@@ -10,17 +10,17 @@
     margin: 0 auto;
     margin-top: 30px;
   }
-  .card-body {
+  .likes-body, .place-body {
+    height: 40px;
     text-align: left;
-    padding: 10px;
+    padding: 0 10px;
+  }
+  .place-body {
+    margin-bottom: 15px;
   }
   .card-image {
     height: 100%;
     width: 100%; 
-  }
-
-  .card-place {
-    font-size: 15px;
   }
 
   .card-username {
@@ -38,14 +38,29 @@
 
   .fas {
     font-size: 20px;
+    top: 20;
   }
-
-  .location-icon-div {
+  .heart-icon-div {
     float: left;
   }
 
-  .card-place {
+  .place-icon-div {
+    float: left;
+  }
+
+  .card-place, .card-likes {
     font-size: 15px;
     float: left;
-    margin: 13px 8px;
+    margin: 0 8px;
+  }
+  #heart-icon:hover {
+    color: red;
+  }
+  #place-icon {
+    color: rgb(43, 163, 238);
+    padding-bottom: 10px;
+  }
+
+  .card-likes, .card-place {
+    margin: 20px 9px;
   }
