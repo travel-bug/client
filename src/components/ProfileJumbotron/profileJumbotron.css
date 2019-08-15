@@ -1,0 +1,27 @@
+.profile-pic-div {
+    width: 300px;
+    height: 300px;
+  
+    
+}
+
+.profile-pic {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+.user-info { 
+    position: center;
+    font-size: 25px;
+    text-align: left;
+    width: 300px;
+    height: 100px;
+}
+
+.user-post-info {
+    font-size: 25px;
+    text-align: left;
+    width: 300px;
+    height: 100px;;
+}

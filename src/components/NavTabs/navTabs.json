@@ -13,10 +13,5 @@
         "id": 4,
         "title": "eat",
         "route": "/eat"
-    },
-    {
-        "id": 5,
-        "title": "profile",
-        "route": "/profile"
     }
 ]

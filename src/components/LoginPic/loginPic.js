@@ -5,10 +5,9 @@ function LoginPic(props){
     return  (
         // <img className="nav-login-pic" src={props.src}></img>
         <div className="nav-login-pic">
-            <button>
-            <i className="fas fa-user-circle" id="nav-login-pic"></i>
-            </button>
-            
+            <a class="profile-btn" href="/profile">
+            <span className="fas fa-user-circle" id="nav-login-pic"></span>
+            </a> 
         </div>
     )
 }

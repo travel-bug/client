@@ -1,12 +1,24 @@
+.profile-btn {
+    border-radius: 50%;
+    border: none;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+}
+
 .nav-login-pic {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     position: absolute;
-    right: 20px;
-    top: 28px;
+    right: 2%;
+    top: 25%;
 }
 
 #nav-login-pic {
-    height: 50px;
-    width: 50px;
+    position: relative;
+    font-size: 30px;
+}
+
+#nav-login-pic:hover {
+    cursor: pointer;
 }

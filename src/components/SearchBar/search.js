@@ -9,9 +9,7 @@ class SearchBar extends Component {
                 </div>
                 <div className="search-btn-div">
                     <button className="btn" type="submit">
-                        <span>
-                        <i className="fas fa-search"></i>
-                        </span>
+                        <span className="fas fa-search"></span>
                     </button>
                 </div>
             </div>
