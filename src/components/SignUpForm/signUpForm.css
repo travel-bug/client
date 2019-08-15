@@ -12,3 +12,16 @@ button.signup-btn {
 button.signup-btn:hover {
     background-color: rgb(102, 196, 255);
 }
+
+.password-div {
+    
+}
+
+.password-input {
+    z-index: 1;
+}
+
+.password-hide {
+    z-index: 2;
+    right: 20px;
+}

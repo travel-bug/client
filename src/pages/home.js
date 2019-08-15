@@ -9,8 +9,14 @@ function Home() {
         <div>
             <Jumbotron 
                 backgroundImage={Image}
+                picTitle="photo by: "
+                photographer="mike zapata"
+                locationTitle="location: "
+                locationName="logan square"
             />
-            <NewPosts />
+            <NewPosts 
+                title="new posts"
+            />
         </div>
     )
 }

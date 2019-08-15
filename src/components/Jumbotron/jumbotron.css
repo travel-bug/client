@@ -9,6 +9,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin-bottom: 0;
 }
 
 .search-div {
@@ -20,14 +21,38 @@
 .search-bar {
     position: absolute;
     position: center;
-    top: 40%;
+    top: 50%;
     width: 100%;
     display: block;
-    
-    
 }
 
 #search-input {
     width: 200px;
 }
 
+.search-btn-div {
+    margin-top: 10px;
+}
+
+button.btn {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(43, 163, 238);
+    color: white;
+    padding: 4px;
+    padding-top: 8px;
+}
+
+button.btn:hover {
+    background-color: rgb(34, 135, 197);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.pic-cred {
+    position: absolute;
+    top: 85%;
+    width: 100%;
+    display: block;
+    color: white;
+}

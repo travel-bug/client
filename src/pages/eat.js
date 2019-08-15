@@ -10,8 +10,14 @@ function Eat() {
         <div>
             <Jumbotron 
                 backgroundImage={Image}
+                picTitle="photo by: "
+                photographer="clark alms"
+                locationTitle="location: "
+                locationName="molly's cupcakes"
             />
-            <NewPosts />
+            <NewPosts 
+                title="eat this..."
+            />
         </div>
     )
 }

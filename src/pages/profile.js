@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
-import Clark from "../images/profile_clark.jpg";
-import { Col, Row, Container } from "../components/Grid/grid";
-import Card from "../components/Card/card";
-import ProfileCard from "../components/ProfileCard/profileCard";
+import React from "react";
+import Jumbotron from "../components/Jumbotron/jumbotron";
+import Image from "../images/Project3_see.jpg";
+import NewPosts from "../components/NewPosts/newPosts";
+// import {Container, Col, Row} from "../components/Grid/grid";
 
-class Profile extends Component {
-
-  render() {
+function Profile() {
     return (
         <div>
-            <Container>
-                <Row>
-                    <Col size="lg-4 md-12 sm-12">
-                        <ProfileCard 
-                        profilePic={Clark}
-                        />
-                    </Col>
-                </Row>    
-          </Container>
+            <Jumbotron 
+                backgroundImage=""
+                picTitle=""
+                photographer=""
+                locationTitle=""
+                locationName=""
+                searchDisplay="none"
+
+            />
+            <NewPosts 
+                title="photos"
+            />
         </div>
-    );
-  }
+    )
 }
 
 export default Profile;

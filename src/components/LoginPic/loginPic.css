@@ -1,6 +1,12 @@
-img.nav-login-pic {
+.nav-login-pic {
     height: 40px;
     width: 40px;
     position: absolute;
     right: 20px;
+    top: 28px;
+}
+
+#nav-login-pic {
+    height: 50px;
+    width: 50px;
 }

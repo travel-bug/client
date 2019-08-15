@@ -20,8 +20,8 @@ class NewPosts extends Component {
             <Container>
             <Col size="lg-12 sm-12">
                 <Row>
-                    <div className="new-posts">
-                    <p>yumm...</p>
+                    <div className="posts-title">
+                    <p>{this.props.title}</p>
                     </div>
                 </Row>
                 <Row>

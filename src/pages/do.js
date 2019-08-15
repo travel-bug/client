@@ -10,8 +10,14 @@ function Do() {
         <div>
             <Jumbotron 
                 backgroundImage={Image}
+                picTitle="photo by: "
+                photographer="chris burke"
+                locationTitle="location: "
+                locationName="second city"
             />
-            <NewPosts />
+            <NewPosts 
+                title="do this..."
+            />
         </div>
     )
 }

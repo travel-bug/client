@@ -9,8 +9,14 @@ function See() {
         <div>
             <Jumbotron 
                 backgroundImage={Image}
+                picTitle="photo by: "
+                photographer="anne coleman"
+                locationTitle="location: "
+                locationName="merchandise mart"
             />
-            <NewPosts />
+            <NewPosts 
+                title="see this..."
+            />
         </div>
     )
 }

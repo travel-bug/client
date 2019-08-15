@@ -12,6 +12,7 @@
     width: 100%;
     overflow: auto;
     background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
 
 }
 
