@@ -13,3 +13,8 @@ export const API_GET = {
   search_place: 'api/search/',
   user_profile: 'api/user/'
 }
+
+export const NOTIF = {
+  SIGN_IN: 'sign_in',
+  SIGN_OUT: 'sign_out'
+}
