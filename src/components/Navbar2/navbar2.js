@@ -14,7 +14,8 @@ class Navbar2 extends Component {
     state = {
         Tabs,
         pic: Avatar,
-        modal: false
+        modal: false,
+        loggedInPic: Avatar
     }
     displayModal = () => {
         this.setState({
@@ -48,7 +49,9 @@ class Navbar2 extends Component {
                             />
                         ))}
                             <LoginSignUp onClick={this.displayModal} />
-                            <LoginPic />
+                            <LoginPic 
+                                img={this.state.loggedInPic}
+                            />
                         </ul>
                     </div>
                 </nav>

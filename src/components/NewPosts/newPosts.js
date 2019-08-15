@@ -18,13 +18,15 @@ class NewPosts extends Component {
         return (
             <div className="new-posts">
             <Container>
-            <Col size="lg-12 sm-12">
                 <Row>
+                <Col size="lg-12 sm-12">
                     <div className="posts-title">
                     <p>{this.props.title}</p>
                     </div>
+                </Col>
                 </Row>
                 <Row>
+                <Col size="lg-12 sm-12">
                     {this.state.posts.map(post => (
                     <Card
                         pic={this.state.pic}
@@ -36,8 +38,9 @@ class NewPosts extends Component {
                     >
                     </Card>
                     ))}
+                    </Col>
                 </Row>
-                </Col>
+                
                 
             </Container>
             </div>
