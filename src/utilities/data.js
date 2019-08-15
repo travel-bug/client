@@ -2,14 +2,24 @@ import axios from 'axios';
 import { API_GET, API_POST } from './constants';
 import { uploadImage } from './firebase';
 
-/** Global data object used to send requests to the API */
-var DataService = {};
-const baseUrl = process.env.REACT_APP_BASE_URL || '/';
-
 /** 
  * Anonymous IIFE that creates the AuthService object
  * @module DataService
  */
+var DataService = {};
+const baseUrl = process.env.REACT_APP_BASE_URL || '/';
+
+/**
+ * An array of post objects across all categories
+ * @param {Object[]}
+ * @param {String} posts[].postId The post's unique id, corresponding to its primary key in mysql
+ * @param {String} posts[].authorId The unique id of the post's author
+ * @param {String} posts[].author The username of the post's author
+ * @param {String} posts[].content The content of the post
+ * @param {String} posts[].imgUrl The url of the image associated with the post
+ */
+var TopPostsAll = [];
+
 (function(obj) {
   /**
    * Sends a GET request to the API for the most recent posts made on travel bug across all categories
