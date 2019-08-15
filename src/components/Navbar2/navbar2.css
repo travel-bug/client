@@ -1,11 +1,14 @@
-
 .navbar-content {
-    position: relative;
-    background-color: black;
-    /* background-color: transparent; */
+    width: 100%;
+    position: fixed;
+    z-index: 11;
+    background-color: white;
+    opacity: .95;
+    
+    /* background-color: rgb(53, 53, 53); */
 }
 .navbar {
-    height: 4rem;
-    justify-content: center;
-    padding: 1rem;
+    height: 65px;
+    /* padding: 1rem; */
+    position: relative;
 }

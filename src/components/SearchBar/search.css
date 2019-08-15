@@ -1,3 +1,8 @@
-form {
-    margin: 1000px;
+.search-div {
+    width: 100%;
 }
+
+#search-input {
+    width: 100%;
+}
+

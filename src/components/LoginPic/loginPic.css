@@ -1,6 +1,16 @@
-img.nav-login-pic {
-    height: 40px;
-    width: 40px;
+.nav-login-pic {
+    height: 30px;
+    width: 30px;
     position: absolute;
-    right: 20px;
+    right: 2%;
+    top: 25%;
+}
+
+#nav-login-pic {
+    position: relative;
+    font-size: 30px;
+}
+
+#nav-login-pic:hover {
+    cursor: pointer;
 }

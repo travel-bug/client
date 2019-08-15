@@ -1,45 +1,24 @@
 import React, { Component } from "react";
 import Image from "../images/chicago.jpg";
-import {Container, Col, Row} from "../components/Grid/grid";
-import Card from "../components/Card/card";
-import Pic from "../images/chicago_bean.jpg";
 import Jumbotron from "../components/Jumbotron/jumbotron";
+import NewPosts from "../components/NewPosts/newPosts";
+// import {Container, Col, Row} from "../components/Grid/grid";
 
-class Home extends Component {
-    state ={
-        pic: "",
-        username: "",
-        password: ""
-    }
-
-    render() {
-        return (
-            <div>
-                <Jumbotron 
-                    backgroundImage={Image}
-                />
-                <div className="new-posts">
-                <Container>
-                <Col size="lg-12 sm-12">
-                    <Row>
-                        <Col size="lg-4">
-                            <h1>new posts</h1>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Card
-                            pic={Pic}
-                        >
-                        Hello
-                        </Card>
-                    </Row>
-                    </Col>
-                    
-                </Container>
-                </div>
-            </div>
-        )
-    }
+function Home() {
+    return (
+        <div>
+            <Jumbotron 
+                backgroundImage={Image}
+                picTitle="photo by: "
+                photographer="mike zapata"
+                locationTitle="location: "
+                locationName="logan square"
+            />
+            <NewPosts 
+                title="new posts"
+            />
+        </div>
+    )
 }
 
 

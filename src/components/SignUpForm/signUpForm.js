@@ -9,7 +9,8 @@ class SignUpForm extends Component {
         username: "",
         password: "",
         confirmPassword: "",
-        email: ""
+        email: "",
+        eyecon: "fa-eye"
     }
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -29,6 +30,22 @@ class SignUpForm extends Component {
             .catch(err => console.log(err));
         };
 
+    hidePassword = () => {
+        const passwordInput = document.getElementsByClassName("password-input");
+        console.log(passwordInput);
+        if (passwordInput.type == "password") {
+            this.setState({
+                eyecon: "fa-eye-slash"
+            })
+            passwordInput.type = "text"
+        } else {
+            this.setState({
+                eyecon: "fa-eye"
+            })
+            passwordInput.type = "password"
+        }
+    }
+
     render() {
         return (
             <div id="result" className="signup-content" >
@@ -36,18 +53,19 @@ class SignUpForm extends Component {
                         sign up
                 </div>
                 <div>
-                    <input className="firstName-input" placeholder="firstName" name="firstName" type="text" value={this.state.firstName} onChange={this.handleInputChange}>
+                    <input className="firstName-input" placeholder="first name" name="firstName" type="text" value={this.state.firstName} onChange={this.handleInputChange}>
                     </input>
-                    <input className="lastName-input" placeholder="lastName" name="lastName" type="text" value={this.state.lastName} onChange={this.handleInputChange}>
+                    <input className="lastName-input" placeholder="last name" name="lastName" type="text" value={this.state.lastName} onChange={this.handleInputChange}>
                     </input>
                     <input className="email-input" placeholder="email" name="email" type="email" value={this.state.email} onChange={this.handleInputChange}>
                     </input>
                     <input className="username-input" placeholder="username" name="username" type="text" value={this.state.username} onChange={this.handleInputChange}>
                     </input>
-                    <input className="password-input" placeholder="password" name="password" type="password" value={this.state.password} onChange={this.handleInputChange}>
-                    </input>
-                    <input className="confirmPassword-input" placeholder="confirm password" name="confirmPassword" type="password" value={this.state.confirmPassword} onChange={this.handleInputChange}>
-                    </input>
+                    <div className="password-div">
+                        <input className="password-input" placeholder="password" name="password" type="password" value={this.state.password} onChange={this.handleInputChange}>
+                        </input>
+                        
+                    </div>
                 </div>
                 <div>
                     <button type="button" className="signup-btn" onClick={this.signUpSubmit}>

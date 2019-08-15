@@ -6,7 +6,7 @@ import LoginPic from "../LoginPic/loginPic";
 import Avatar from "../../images/avatar.png";
 import Tabs from "../NavTabs/navTabs.json";
 import Modal from "../Modal/modal";
-import AuthService from "../../utilities/auth";
+// import { Container, Row, Col } from "../Grid/grid";
 import "./navbar2.css";
 
 
@@ -15,6 +15,7 @@ class Navbar2 extends Component {
         Tabs,
         pic: Avatar,
         modal: false,
+        loggedInPic: Avatar
     }
     displayModal = () => {
         this.setState({
@@ -28,16 +29,16 @@ class Navbar2 extends Component {
         })
     }
 
-
     render() {
         return (
             <div className="navbar-content">
+            
                 <nav class="navbar navbar-expand-lg">
                     <Logo/>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                         {this.state.Tabs.map(Tab => (
                             <NavTabs
@@ -48,7 +49,9 @@ class Navbar2 extends Component {
                             />
                         ))}
                             <LoginSignUp onClick={this.displayModal} />
-                            <LoginPic src={this.state.pic} />
+                            <LoginPic 
+                                img={this.state.loggedInPic}
+                            />
                         </ul>
                     </div>
                 </nav>
@@ -56,6 +59,7 @@ class Navbar2 extends Component {
 	            onClick={this.clearModal}
 	            /> 
 	            : null}
+
             </div>
         );
     }
