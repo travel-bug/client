@@ -1,14 +1,24 @@
 import axios from 'axios';
-import { API_POST } from './constants';
-
-/** Global authentication object used to send requests to the API */
-var AuthService = {};
-const baseUrl = process.env.REACT_APP_BASE_URL || '/';
+import Pubsub from './pubsub';
+import { API_POST, NOTIF } from './constants';
 
 /** 
  * Anonymous IIFE that creates the AuthService object
  * @module AuthService
  */
+var AuthService = {};
+const baseUrl = process.env.REACT_APP_BASE_URL || '/';
+
+/**
+ * User object representing the currently signed in user's profile information
+ * @param {String} [userId] The user's unique id, corresponding to the primary key in mysql
+ * @param {String} [username] User's display name
+ * @param {String} [firstName] User's first name
+ * @param {String} [lastName] User's last name
+ * @param {String} [profPicUrl] The URL of the user's profile pic that's stored in firebase
+ */
+var User = {};
+
 (function(obj) {
   /**
    * Send user information in a POST request to the the API "create account" endpoint
@@ -35,6 +45,8 @@ const baseUrl = process.env.REACT_APP_BASE_URL || '/';
       axios.post(baseUrl + API_POST.signup, authParams).then(response => {
         // set important response data to a variable or coordinate with context
         console.log(response);
+        packageUserInfo(response.data);
+        Pubsub.publish(NOTIF.SIGN_IN, null);
         resolve();
       }).catch(error => {
         console.log(error);
@@ -61,6 +73,8 @@ const baseUrl = process.env.REACT_APP_BASE_URL || '/';
       axios.post(baseUrl + API_POST.login, authParams).then(response => {
         // set important response data to a variable or coordinate with context
         console.log(response);
+        packageUserInfo(response.data);
+        Pubsub.publish(NOTIF.SIGN_IN, null);
         resolve();
       }).catch(error => {
         console.log(error);
@@ -79,6 +93,8 @@ const baseUrl = process.env.REACT_APP_BASE_URL || '/';
     return new Promise((resolve, reject) => {
       axios.post(baseUrl + API_POST.signout).then(response => {
         console.log(response);
+        User = {};
+        Pubsub.publish(NOTIF.SIGN_OUT, null);
         resolve();
       }).catch(error => {
         console.log(error);
@@ -88,4 +104,16 @@ const baseUrl = process.env.REACT_APP_BASE_URL || '/';
   }
 })(AuthService);
 
+const packageUserInfo = (userObj) => {
+  User.userId = userObj.person_id;
+  User.username = userObj.username;
+  User.firstName = userObj.firstName;
+  User.lastName = userObj.lastName;
+  User.profPicUrl = userObj.prof_pic_url;
+}
+
 export default AuthService;
+
+export {
+  User
+};
