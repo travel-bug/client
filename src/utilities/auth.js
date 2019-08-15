@@ -107,9 +107,9 @@ var User = {};
 const packageUserInfo = (userObj) => {
   User.userId = userObj.person_id;
   User.username = userObj.username;
-  User.firstName = userObj.firstName;
-  User.lastName = userObj.lastName;
-  User.profPicUrl = userObj.prof_pic_url;
+  User.firstName = userObj.firstName || '';
+  User.lastName = userObj.lastName || '';
+  User.profPicUrl = userObj.prof_pic_url || '';
 }
 
 export default AuthService;
