@@ -5,12 +5,12 @@ import { Row, Col, Container } from "../Grid/grid";
 
 function ProfileJumbotron(props) {
 	return (
-		<div className="jumbotron text-center">
+		<div className="profile-jumbotron text-center">
 		<Container fluid>
 			<Row>
 				<Col size="4">
 					<div className="profile-pic-div">
-						<img className="profile-pic" src={props.profilePic}></img>
+						<img className="p-pic" src={props.profilePic}></img>
 					</div>
 				</Col>
 				<Col size="4">
@@ -22,7 +22,7 @@ function ProfileJumbotron(props) {
 				<Col size="4">
 					<div className="user-post-info">
 						<p>albums: <strong>10</strong></p>
-						<p>posts: <strong>35</strong></p>
+						<p>pics: <strong>35</strong></p>
 					</div>		
 				</Col>
 			</Row>
