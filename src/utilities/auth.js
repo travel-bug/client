@@ -37,8 +37,8 @@ var User = {};
       username: params.username,
       password: params.password,
       email: params.email,
-      firstName: params.firstName,
-      lastName: params.lastName
+      firstname: params.firstName,
+      lastname: params.lastName
     };
     console.log(baseUrl + API_POST.signup);
     return new Promise((resolve, reject) => {
