@@ -1,0 +1,14 @@
+.card {
+    border: none;
+}
+
+.album-image {
+    width: 100%;
+    height: 100%;
+}
+
+.album-image:hover {
+    transform: scale(1.05);
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+}

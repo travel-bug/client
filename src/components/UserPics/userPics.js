@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../Grid/grid";
 import Pic from "../../images/chicago_bean.jpg";
 import Posts from "../NewPosts/newPosts.json";
 import Avatar from "../../images/avatar.png";
+import Albums from "../Albums/albums";
 import "./userPics.css";
 
 
@@ -30,15 +31,20 @@ class UserPics extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col size="lg-12 sm-12 pics">
+                    
                         {this.state.posts.map(post => (
+                            <Col size="lg-4 sm-12 pics">
+                            <Albums 
+                                pic={this.state.pic}
+                                id={post.id}
+                            />
                         <Card
                             pic={this.state.pic}
                             id={post.id}
-                        >
-                        </Card>
+                        />
+                        </Col>
                         ))}
-                    </Col>
+                    
                 </Row>
                 
                 

@@ -62,13 +62,13 @@ class Navbar2 extends Component {
         return (
             <div className="navbar-content">
             
-                <nav class="navbar navbar-expand-lg">
+                <nav className="navbar navbar-inverse bg-inverse navbar-expand-lg navbar-dark">
                     <Logo/>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav">
                         {this.state.Tabs.map(Tab => (
                             <NavTabs
                                 id={Tab.id}

@@ -12,3 +12,19 @@
     /* padding: 1rem; */
     position: relative;
 }
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-color: rgb(43, 163, 238);
+    border-radius: 10%;
+    font-size: 15px;
+    width: 30px;
+}
+
+.navbar-toggler-icon:hover {
+    background-color: rgb(34, 135, 197);
+    
+}
