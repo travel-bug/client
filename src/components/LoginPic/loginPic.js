@@ -7,7 +7,7 @@ function LoginPic(props){
         <div className="nav-login-pic">
             <a class="profile-btn" href="/profile">
             <span className="fas fa-user-circle" id="nav-login-pic"></span>
-            <img className="logged-in-pic" src={props.img}></img>
+            <img className="logged-in-pic" src={props.pic}></img>
             </a> 
         </div>
     )

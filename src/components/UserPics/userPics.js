@@ -17,26 +17,30 @@ class UserPics extends Component {
         return (
             <div className="user-pics">
             <Container>
-            <Col size="lg-12 sm-12 pics">
+            
                 <Row>
-                    <div className="profile-nav">
-                    <span className="profile-nav-tabs">{this.props.title}</span>
-                    <span className="profile-nav-tabs">|</span>
-                    <span className="profile-nav-tabs">albums</span>
-                    <span className="profile-nav-tabs">|</span>
-                    <span className="profile-nav-tabs">places</span>
-                    </div>
+                    <Col size="lg-12 sm-12 pics">
+                        <div className="profile-nav">
+                        <button className="profile-nav-tabs" onClick="">{this.props.title}</button>
+                        <span className="profile-nav-tabs">|</span>
+                        <button className="profile-nav-tabs" onClick="">albums</button>
+                        <span className="profile-nav-tabs">|</span>
+                        <button className="profile-nav-tabs" onClick="">places</button>
+                        </div>
+                    </Col>
                 </Row>
                 <Row>
-                    {this.state.posts.map(post => (
-                    <Card
-                        pic={this.state.pic}
-                        id={post.id}
-                    >
-                    </Card>
-                    ))}
+                    <Col size="lg-12 sm-12 pics">
+                        {this.state.posts.map(post => (
+                        <Card
+                            pic={this.state.pic}
+                            id={post.id}
+                        >
+                        </Card>
+                        ))}
+                    </Col>
                 </Row>
-                </Col>
+                
                 
             </Container>
             </div>
