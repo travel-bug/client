@@ -1,5 +1,5 @@
 import React from "react";
-import Bug from "./bug_icon.png";
+import Bug from "../../images/bug_icon.png";
 import "./logo.css";
 
 function Logo() {

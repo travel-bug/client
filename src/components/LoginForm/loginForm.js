@@ -4,11 +4,11 @@ import AuthService from "../../utilities/auth";
 import "./loginForm.css";
 
 class LoginForm extends Component {
-
     state = {
         username: "",
         password: "",
     }
+
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({

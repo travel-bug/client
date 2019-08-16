@@ -14,3 +14,10 @@
 #nav-login-pic:hover {
     cursor: pointer;
 }
+
+.logged-in-pic {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 2%;
+}

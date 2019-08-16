@@ -6,19 +6,26 @@ class SignUpForm extends Component {
     state = {
         firstName: "",
         lastName: "",
+        email: "",
         username: "",
         password: "",
-        confirmPassword: "",
-        email: "",
-        eyecon: "fa-eye"
+        eyecon: "fa-eye",
+        login: true,
+        passwordType: "password"
     }
     handleInputChange = event => {
         const { name, value } = event.target;
+        console.log("firstName:" + this.state.firstName,
+            "lastName:" + this.state.lastName,
+            "username:" + this.state.username, 
+            "password:" + this.state.password,
+            "email:" + this.state.email)
         this.setState({
             [name]: value
         });
         };
     signUpSubmit = () => {
+        
         AuthService.sendSignupRequest({
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -26,23 +33,27 @@ class SignUpForm extends Component {
             password: this.state.password,
             email: this.state.email
         })
-            .then(res => this.setState({ login: false }))
+            .then(res => this.setState({ 
+                login: false 
+            }))
             .catch(err => console.log(err));
         };
 
     hidePassword = () => {
-        const passwordInput = document.getElementsByClassName("password-input");
-        console.log(passwordInput);
-        if (passwordInput.type == "password") {
+           let passwordType = this.state.passwordType
+        if (passwordType == "password") {
             this.setState({
-                eyecon: "fa-eye-slash"
+                eyecon: "fa-eye-slash",
+                passwordType: "text"
             })
-            passwordInput.type = "text"
+            
         } else {
+            passwordType = "password"
             this.setState({
-                eyecon: "fa-eye"
+                eyecon: "fa-eye",
+                passwordType: "password"
             })
-            passwordInput.type = "password"
+            
         }
     }
 
@@ -62,9 +73,11 @@ class SignUpForm extends Component {
                     <input className="username-input" placeholder="username" name="username" type="text" value={this.state.username} onChange={this.handleInputChange}>
                     </input>
                     <div className="password-div">
-                        <input className="password-input" placeholder="password" name="password" type="password" value={this.state.password} onChange={this.handleInputChange}>
+                        <input className="password-input" placeholder="password" name="password" type={this.state.passwordType} value={this.state.password} onChange={this.handleInputChange}>
                         </input>
-                        
+                        <button className="password-display" onClick={this.hidePassword}>
+                        <i class={"fas " + this.state.eyecon}></i>
+                        </button>
                     </div>
                 </div>
                 <div>
