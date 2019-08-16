@@ -60,9 +60,10 @@ class Navbar2 extends Component {
 
     render() {
         return (
+            <div>
             <div className="navbar-content">
             
-                <nav className="navbar navbar-inverse bg-inverse navbar-expand-lg navbar-dark">
+                <nav className="navbar navbar-expand-lg">
                     <Logo/>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -77,21 +78,27 @@ class Navbar2 extends Component {
                                 route={Tab.route}
                             />
                         ))}
+                            <div className="top-login">
                             <LoginSignUp 
                             onClick={this.displayModal} 
                             loggedInName={this.state.loggedInName}
                             />
-                            <LoginPic 
+                            </div>
+                            <div className="top-login-pic">
+                            {/* <LoginPic 
                                 pic={this.state.loggedInPic}
-                            />
+                            /> */}
+                            </div>
                         </ul>
                     </div>
                 </nav>
-                {this.state.modal ? <Modal 
+               
+
+            </div>
+            {this.state.modal ? <Modal 
 	            onClick={this.clearModal}
 	            /> 
 	            : null}
-
             </div>
         );
     }

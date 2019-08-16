@@ -1,5 +1,4 @@
 a {
-    color: white;
     color: black;
     font-size: 20px;
     padding: 0
@@ -14,7 +13,7 @@ a {
 
 a.nav-link.active {
     color: rgb(43, 163, 238);
-    padding: 0px 0px;
+    padding: 8px 0px;
 }
 
 a:hover {

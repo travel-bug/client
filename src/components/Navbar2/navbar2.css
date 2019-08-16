@@ -4,12 +4,9 @@
     z-index: 11;
     background-color: white;
     opacity: .95;
-    
-    /* background-color: rgb(53, 53, 53); */
 }
 .navbar {
     height: 65px;
-    /* padding: 1rem; */
     position: relative;
 }
 
@@ -22,9 +19,27 @@
     border-radius: 10%;
     font-size: 15px;
     width: 30px;
+    /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); */
+
 }
+.show {
+    background-color: white;
+    width: auto !important;
+}
+.show.login {
+    position: absolute;
+}
+
 
 .navbar-toggler-icon:hover {
     background-color: rgb(34, 135, 197);
     
+}
+.top-login {
+    position: relative;
+    width: 200px;
+    float: left;
+}
+.show.top-login-pic {
+    display: none;
 }

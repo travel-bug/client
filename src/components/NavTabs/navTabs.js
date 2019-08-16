@@ -6,10 +6,10 @@ function NavTabs(props) {
 
     return (
         <div>
-            <li className={"nav-tab-" + props.id}>
+            <li className={"nav-item nav-tab-" + props.id}>
                 <Link
                     to={props.route}
-                    className={window.location.pathname === props.route ? "nav-link active"  : "nav-link-" + props.id} onClick={props.onClick}
+                    className={window.location.pathname === props.route ? "nav-link active"  : "nav-link nav-link-" + props.id} onClick={props.onClick}
                     >
                     {props.title}
                 </Link>

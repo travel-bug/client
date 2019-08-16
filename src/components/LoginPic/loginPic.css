@@ -1,9 +1,10 @@
 .nav-login-pic {
     height: 30px;
     width: 30px;
-    position: absolute;
-    right: 2%;
-    top: 25%;
+    position: relative;
+    float: right;
+    /* right: 2%; */
+    /* top: 25%; */
 }
 
 #nav-login-pic {
@@ -19,5 +20,6 @@
     height: 30px;
     width: 30px;
     position: absolute;
-    right: 2%;
+    /* right: 2%; */
+    display: none;
 }
