@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Logo from "../Logo/logo";
+import Avatar from "../../images/avatar.png";
 import NavTabs from "../NavTabs/navTabs.js";
 import LoginSignUp from "../LoginSignUp/loginSignUp";
 import LoginPic from "../LoginPic/loginPic";
-import Avatar from "../../images/avatar.png";
 import Tabs from "../NavTabs/navTabs.json";
 import Modal from "../Modal/modal";
 import PubSub from "../../utilities/pubsub";
@@ -25,10 +25,10 @@ class Navbar2 extends Component {
 
     state = {
         Tabs,
-        pic: Avatar,
         modal: false,
-        loggedInPic: Avatar,
-        loggedInName: "login/sign up"
+        loggedInName: "login/sign up",
+        profilePic: Avatar,
+        loggedInPicDisplay: "none"
     }
 
     handleSignIn = () => {
@@ -83,11 +83,10 @@ class Navbar2 extends Component {
                             onClick={this.displayModal} 
                             loggedInName={this.state.loggedInName}
                             />
-                            </div>
-                            <div className="top-login-pic">
-                            {/* <LoginPic 
-                                pic={this.state.loggedInPic}
-                            /> */}
+                            <LoginPic 
+                                profilePic={this.state.profilePic}
+                                loggedInPicDisplay={this.state.loggedInPicDisplay}
+                            />
                             </div>
                         </ul>
                     </div>
@@ -96,7 +95,7 @@ class Navbar2 extends Component {
 
             </div>
             {this.state.modal ? <Modal 
-	            onClick={this.clearModal}
+	        onClick={this.clearModal}
 	            /> 
 	            : null}
             </div>

@@ -18,16 +18,26 @@
 .col-pics {
     background-color: rgb(243, 241, 241);
     padding: 0;
-    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .profile-nav-tabs {
     color: rgb(143, 143, 143);
-    margin: 0 40px;
+    padding: 0 80px;
     background: none;
     border: none;
 }
 .profile-nav-tabs:hover {
     cursor: pointer;
     color: rgb(107, 107, 107);
+}
+
+.pics, .albums {
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: rgb(214, 214, 214);
+}
+
+button:focus {
+    outline: none;
 }

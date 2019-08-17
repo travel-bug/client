@@ -28,7 +28,7 @@ class NewPosts extends Component {
                 <Row>
                     {this.state.posts.map(post => (
                         
-                <Col size="lg-5 sm-12">
+                <Col size="lg-4 sm-12">
                     <Card
                         pic={this.state.pic}
                         id={post.id}

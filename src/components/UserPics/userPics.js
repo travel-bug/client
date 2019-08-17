@@ -11,44 +11,56 @@ import "./userPics.css";
 class UserPics extends Component {
     state = {
         pic: Pic,
-        posts: Posts
+        posts: Posts,
+        albums: false,
+        pics: true
+    }
+
+    showPics = () => {
+        this.setState({
+            pics: true,
+            albums: false
+        })
+    }
+
+    showAlbums = () => {
+        this.setState({
+            pics: false,
+            albums: true
+        })
     }
 
     render() {
         return (
             <div className="user-pics">
-            <Container>
-            
-                <Row>
-                    <Col size="lg-12 sm-12 pics">
-                        <div className="profile-nav">
-                        <button className="profile-nav-tabs" onClick="">{this.props.title}</button>
-                        <span className="profile-nav-tabs">|</span>
-                        <button className="profile-nav-tabs" onClick="">albums</button>
-                        <span className="profile-nav-tabs">|</span>
-                        <button className="profile-nav-tabs" onClick="">places</button>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    
+                <Container>
+                
+                    <Row>
+                        <Col size="lg-12 sm-12 pics">
+                            <div className="profile-nav">
+                                <button className="profile-nav-tabs pics" onClick={this.showPics}>pics</button>
+                                <button className="profile-nav-tabs albums" onClick={this.showAlbums}>albums</button> 
+                                <button className="profile-nav-tabs places" onClick="">places</button>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
                         {this.state.posts.map(post => (
-                            <Col size="lg-4 sm-12 pics">
-                            <Albums 
+                            <Col size="lg-4 md-6 sm-12 pics">
+                                {this.state.pics ? <Card
                                 pic={this.state.pic}
                                 id={post.id}
-                            />
-                        <Card
-                            pic={this.state.pic}
-                            id={post.id}
-                        />
-                        </Col>
+                                />
+                                : null}
+                                {this.state.albums ? <Albums 
+                                pic={this.state.pic}
+                                id={post.id}
+                                />
+                                : null}
+                            </Col>
                         ))}
-                    
-                </Row>
-                
-                
-            </Container>
+                    </Row>
+                </Container>
             </div>
         )
     }

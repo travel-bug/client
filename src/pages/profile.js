@@ -30,9 +30,7 @@ class Profile extends Component {
                 <ProfileJumbotron 
                     profilePic={ProfilePic}
                 />
-                <UserPics 
-                    title="pics"
-                />
+                <UserPics />
             </div>
         )
     }

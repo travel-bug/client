@@ -1,9 +1,9 @@
 .profile-jumbotron {
+    padding-top: 150px;
     background-color: rgb(243, 241, 241);
 }
 
 .profile-pic-div {
-    width: 300px;
     height: 300px;  
 }
 
@@ -14,16 +14,24 @@
 }
 
 .user-info { 
-    position: center;
     font-size: 25px;
     text-align: left;
-    width: 300px;
     height: 100px;
 }
 
 .user-post-info {
     font-size: 25px;
     text-align: left;
-    width: 300px;
-    height: 100px;;
+    height: 100px;
 }
+
+@media (max-width: 767.98px) {
+    .user-info { 
+        font-size: 20px;
+        text-align: center;
+    }
+    .user-post-info {
+        font-size: 20px;
+        text-align: center;
+    }
+} 
