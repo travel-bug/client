@@ -26,8 +26,9 @@ class NewPosts extends Component {
                 </Col>
                 </Row>
                 <Row>
-                <Col size="lg-12 sm-12">
                     {this.state.posts.map(post => (
+                        
+                <Col size="lg-4 sm-12">
                     <Card
                         pic={this.state.pic}
                         id={post.id}
@@ -37,9 +38,11 @@ class NewPosts extends Component {
                         place={post.place}
                     >
                     </Card>
-                    ))}
                     </Col>
-                </Row>
+                
+                    ))}
+                    </Row>
+                    
                 
                 
             </Container>

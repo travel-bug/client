@@ -1,21 +1,20 @@
-import React from 'react';
-import {Row} from "../Grid/grid";
+import React, { Component } from 'react';
 import "./loginSignUp.css";
 
-function LoginSignUp(props) {
+class LoginSignUp extends Component {
     
-    return (
-        <Row>
+    render(props) {
+        return(
             <div className="login-div">
                 <li className="nav-item login">
-                    <a className="nav-link login" onClick={props.onClick}>
-                    {props.loggedInName}
+                    <a className="nav-link login" onClick={this.props.onClick}>
+                    {this.props.loggedInName}
                     </a>
                 </li>
+             
             </div>
-        </Row>
-    )
-        
+        )
+    }  
 }
 
 export default LoginSignUp;

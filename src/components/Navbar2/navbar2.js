@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Logo from "../Logo/logo";
+import Avatar from "../../images/avatar.png";
 import NavTabs from "../NavTabs/navTabs.js";
 import LoginSignUp from "../LoginSignUp/loginSignUp";
 import LoginPic from "../LoginPic/loginPic";
-import Avatar from "../../images/avatar.png";
 import Tabs from "../NavTabs/navTabs.json";
 import Modal from "../Modal/modal";
 import PubSub from "../../utilities/pubsub";
@@ -25,10 +25,10 @@ class Navbar2 extends Component {
 
     state = {
         Tabs,
-        pic: Avatar,
         modal: false,
-        loggedInPic: Avatar,
-        loggedInName: "login/sign up"
+        loggedInName: "login/sign up",
+        profilePic: Avatar,
+        loggedInPicDisplay: "none"
     }
 
     handleSignIn = () => {
@@ -60,15 +60,16 @@ class Navbar2 extends Component {
 
     render() {
         return (
+            <div>
             <div className="navbar-content">
             
-                <nav class="navbar navbar-expand-lg">
+                <nav className="navbar navbar-expand-lg">
                     <Logo/>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse flex-grow-1" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav">
                         {this.state.Tabs.map(Tab => (
                             <NavTabs
                                 id={Tab.id}
@@ -77,21 +78,26 @@ class Navbar2 extends Component {
                                 route={Tab.route}
                             />
                         ))}
+                            <div className="top-login">
                             <LoginSignUp 
                             onClick={this.displayModal} 
                             loggedInName={this.state.loggedInName}
                             />
                             <LoginPic 
-                                pic={this.state.loggedInPic}
+                                profilePic={this.state.profilePic}
+                                loggedInPicDisplay={this.state.loggedInPicDisplay}
                             />
+                            </div>
                         </ul>
                     </div>
                 </nav>
-                {this.state.modal ? <Modal 
-	            onClick={this.clearModal}
+               
+
+            </div>
+            {this.state.modal ? <Modal 
+	        onClick={this.clearModal}
 	            /> 
 	            : null}
-
             </div>
         );
     }
