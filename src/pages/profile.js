@@ -9,7 +9,13 @@ import { User } from '../utilities/auth';
 
 class Profile extends Component {
     state = {
-        something: null
+        profilePic: ProfilePic,
+        firstName: "clark",
+        lastName: "alms",
+        username: "clark.alms",
+        numOfAlbums: "12",
+        numOfPics: "43"  
+
     }
     componentDidMount(handleSignIn) {
         PubSub.subscribe(NOTIF.SIGN_IN, this, handleSignIn)
@@ -28,7 +34,12 @@ class Profile extends Component {
         return (
             <div>
                 <ProfileJumbotron 
-                    profilePic={ProfilePic}
+                    profilePic={this.state.profilePic}
+                    firstName={this.state.firstName}
+                    lastName={this.state.lastName}
+                    username={this.state.username}
+                    numOfAlbums={this.state.numOfAlbums}
+                    numOfPics={this.state.numOfPics}    
                 />
                 <UserPics />
             </div>

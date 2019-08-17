@@ -11,22 +11,23 @@ function ProfileJumbotron(props) {
 					<Col size="lg-4 md-6 sm-12">
 						<div className="profile-pic-div">
 							<img className="p-pic" src={props.profilePic}></img>
+							{/* <span className="fas fa-user-circle" id="profile-pic-blank"></span> */}
 						</div>
 					</Col>
-					<Col size="lg-4 md-6 sm-12">
+					<Col size="lg-4 md-6 sm-12 info">
 						<Row>
 							<Col size="12">
 							<div className="user-info">
-								<p>name: <strong>clark alms</strong></p>
-								<p>username: <strong>clark.alms</strong></p>
+								<p>name: <strong>{props.firstName} {props.lastName}</strong></p>
+								<p>username: <strong>{props.username}</strong></p>
 							</div>
 							</Col>
 						</Row>
 						<Row>
 							<Col size="12">
 							<div className="user-post-info">
-								<p>albums: <strong>10</strong></p>
-								<p>pics: <strong>35</strong></p>
+								<p>albums: <strong>{props.numOfAlbums}</strong></p>
+								<p>pics: <strong>{props.numOfPics}</strong></p>
 							</div>
 							</Col>
 						</Row>		

@@ -6,6 +6,10 @@
 .profile-pic-div {
     height: 300px;  
 }
+#profile-pic-blank {
+    font-size: 260px;
+
+}
 
 .p-pic {
     height: 250px;
@@ -19,6 +23,10 @@
     height: 100px;
 }
 
+.col-info {
+    padding-top: 30px;
+}
+
 .user-post-info {
     font-size: 25px;
     text-align: left;
@@ -26,6 +34,9 @@
 }
 
 @media (max-width: 767.98px) {
+    .col-info {
+        padding-top: 0;
+    }
     .user-info { 
         font-size: 20px;
         text-align: center;
