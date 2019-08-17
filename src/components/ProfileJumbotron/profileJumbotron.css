@@ -33,6 +33,14 @@
     height: 100px;
 }
 
+.user-info:focus {
+    outline: none;
+}
+
+.firstLastNamefocus {
+    background-color: #fff;
+}
+
 @media (max-width: 767.98px) {
     .col-info {
         padding-top: 0;
