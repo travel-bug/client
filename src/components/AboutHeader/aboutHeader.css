@@ -1,8 +1,134 @@
 .about-top-div {
-    background-color: gray;
+    background-color: rgb(243, 241, 241);
+
 }
-.about-title {
-    padding-top: 100px;
-    height: 900px;
-    font-size: 45px;
+/* 
+.about-left-col {
+    background-color: white;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.about-right-col {
+    background-color: white;
+    margin-top: 100px;
+    margin-bottom: 100px;
+} */
+
+.col-left {
+    background-color: white;
+    margin: 100px 0;
+    padding: 32px;
+    border: solid !important;
+    border-color: rgb(214, 214, 214) !important;
+    border-width: 1px !important;
+    border-right-width: 1px !important;
+}
+
+.about-nav {
+    font-size: 20px;
+    color: #2BA3EE;
+    padding-bottom: 16px;
+    border-bottom: solid !important;
+    border-bottom-color: rgb(214, 214, 214) !important;
+    border-bottom-width: 1px !important;
+}
+.about-the-app-div, .about-the-creators-div {
+    margin-top: 16px;
+}
+
+.about-nav-link, .about-nav-link {
+    font-size: 16px;
+    color: black;
+}
+.about-nav-link:hover, .about-nav-link:hover {
+    /* margin: 16px; */
+    color: #2BA3EE;
+    
+}
+
+
+.col-right {
+    background-color: white;
+    margin: 100px 0;
+    padding: 32px;
+    border: solid !important;
+    border-color: rgb(214, 214, 214) !important;
+    border-width: 1px !important;
+    border-left: none !important;
+}
+
+.title-about-div {
+    padding-bottom: 16px;
+    border-bottom: solid;
+    border-bottom-color: rgb(214, 214, 214);
+    border-bottom-width: 1px;
+    font-size: 35px;
+}
+
+.title-the-bug-div {
+    font-size: 20px;
+}
+.about-content-div {
+    padding-top: 16px;
+}
+
+.developers-div {
+    border-top: 1px solid rgb(214, 214, 214);
+    
+}
+
+.title-word-bug {
+    color: rgb(43, 163, 238);
+}
+
+.dev-pic-div {
+    padding-top: 16px;
+}
+
+.dev-profile-pic {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.dev-name {
+    font-size: 25px;
+    padding: 16px 0;
+}
+.dev-info {
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+
+@media (max-width: 991.98px) {
+    .col-left {
+        margin-top: 100px;
+        margin-bottom: 0;
+        
+    }
+    .col-right {
+        border-top: none !important;
+        border-left: solid !important;
+        border-left-color: rgb(214, 214, 214) !important;
+        border-left-width: 1px !important;
+        margin-top: 0;
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .col-left {
+        margin-top: 100px;
+        margin-bottom: 0;
+        
+    }
+    .col-right {
+        border-top: none !important;
+        border-left: solid !important;
+        border-left-color: rgb(214, 214, 214) !important;
+        border-left-width: 1px !important;
+        margin-top: 0;
+        margin-bottom: 100px;
+    }
 }
