@@ -40,6 +40,7 @@ a.nav-link.login {
     margin-top: 2px;
     padding: 8px 0;
 }
+
 @media (max-width: 991.98px) {
 
     a.nav-link.login {

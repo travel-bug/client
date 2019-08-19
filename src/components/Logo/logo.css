@@ -1,4 +1,8 @@
 .bug-logo {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
+}
+
+.navbar-brand {
+    margin-left: 5px;
 }

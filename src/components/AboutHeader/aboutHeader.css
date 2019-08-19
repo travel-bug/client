@@ -41,10 +41,10 @@
     font-size: 16px;
     color: black;
 }
-.about-nav-link:hover, .about-nav-link:hover {
-    /* margin: 16px; */
+.about-the-app-div:hover, .about-the-creators-div:hover {
+    margin-top: 16px;
+    cursor: pointer;
     color: #2BA3EE;
-    
 }
 
 
@@ -59,16 +59,17 @@
 }
 
 .title-about-div {
-    padding-bottom: 16px;
-    border-bottom: solid;
-    border-bottom-color: rgb(214, 214, 214);
-    border-bottom-width: 1px;
+    padding: 16px 0;
     font-size: 35px;
 }
 
+.title-the-bug-div.navbar-brand {
+    margin: 0;
+}
 .title-the-bug-div {
     font-size: 20px;
 }
+
 .about-content-div {
     padding-top: 16px;
 }
@@ -79,6 +80,7 @@
 }
 
 .title-word-bug {
+    font-family: 'Pacifico', cursive;
     color: rgb(43, 163, 238);
 }
 
