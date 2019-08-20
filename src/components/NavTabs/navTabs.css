@@ -5,29 +5,13 @@ a {
 }
 
 
-.nav-tab-3, .nav-tab-4 {
+.nav-tab-2, .nav-tab-3, .nav-tab-4 {
     margin: 0 30px;
     color: white;
     padding: 0;
 }
 
-.nav-tab-2 {
-    margin-left: 46px;
-    margin-right: 30px;
-    color: white;
-    padding: 0;
-}
-
-.nav-tab-1 {
-    padding-top: 12px;
-}
-a.nav-link-1 {
-    font-size: 12px;
-    font-family: 'Pacifico', cursive;
-    
-}
-
-a.nav-link.active {
+.nav-link.active {
     color: rgb(43, 163, 238);
     padding: 8px 0px;
 }

@@ -1,5 +1,6 @@
 .about-top-div {
     background-color: rgb(243, 241, 241);
+    
 
 }
 /* 
@@ -19,19 +20,14 @@
     background-color: white;
     margin: 100px 0;
     padding: 32px;
-    border: solid !important;
-    border-color: rgb(214, 214, 214) !important;
-    border-width: 1px !important;
-    border-right-width: 1px !important;
+    border: 1px solid rgb(214, 214, 214) !important;
 }
 
 .about-nav {
     font-size: 20px;
     color: #2BA3EE;
     padding-bottom: 16px;
-    border-bottom: solid !important;
-    border-bottom-color: rgb(214, 214, 214) !important;
-    border-bottom-width: 1px !important;
+    border-bottom: 1px solid rgb(214, 214, 214) !important;
 }
 .about-the-app-div, .about-the-creators-div {
     margin-top: 16px;
@@ -52,9 +48,7 @@
     background-color: white;
     margin: 100px 0;
     padding: 32px;
-    border: solid !important;
-    border-color: rgb(214, 214, 214) !important;
-    border-width: 1px !important;
+    border: 1px solid rgb(214, 214, 214) !important;
     border-left: none !important;
 }
 
@@ -63,8 +57,8 @@
     font-size: 35px;
 }
 
-.title-the-bug-div.navbar-brand {
-    margin: 0;
+.title-the-bug-div .navbar-brand {
+    margin-right: 5px;
 }
 .title-the-bug-div {
     font-size: 20px;
@@ -77,6 +71,9 @@
 .developers-div {
     border-top: 1px solid rgb(214, 214, 214);
     
+}
+.title-word-travel {
+    padding-top: 40px;
 }
 
 .title-word-bug {
@@ -111,9 +108,7 @@
     }
     .col-right {
         border-top: none !important;
-        border-left: solid !important;
-        border-left-color: rgb(214, 214, 214) !important;
-        border-left-width: 1px !important;
+        border-left: 1px solid rgb(214, 214, 214) !important;
         margin-top: 0;
         margin-bottom: 100px;
     }

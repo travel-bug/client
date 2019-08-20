@@ -49,18 +49,18 @@ export class AboutHeader extends Component {
                             <div className="about-right-col">
                                 
                                 <div className="title-the-bug-div">
-                                <Logo />
-                                <span className="title-word-the">travel </span>
-                                <span className="title-word-bug"> bug</span>
+                                    <Logo />
+                                    
+                                        <span className="title-word-travel">travel </span>
+                                        <span className="title-word-bug"> bug</span>
+                                    
                                 </div>
                                 <div className="title-about-div">
                                     <span>{this.state.title}</span>
                                     
                                 </div>
                                 {this.state.about ? <AboutUs />
-                                : <TheCreators />}
-                                
-                                
+                                : <TheCreators />}  
                             </div>
                         </Col>
                             </Row>
