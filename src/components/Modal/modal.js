@@ -17,6 +17,13 @@ class Modal extends Component {
         })
     }
 
+    displayLoginForm = () => {
+        this.setState({
+            login: true,
+            signUp: false
+        })
+    }
+
     render() {
         return (
             
@@ -34,6 +41,7 @@ class Modal extends Component {
                         : null}
 
                         {this.state.signUp ? <SignUpForm 
+                        displayLoginForm={this.displayLoginForm}
                         /> 
                         : null}
                     </div>
