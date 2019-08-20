@@ -11,25 +11,28 @@
     border-bottom: 1px solid rgb(214, 214, 214) !important;
 }
 
-.navbar-toggler {
+.navbar-toggler .collapsed {
+    padding: 0;
     border: none;
+    width: 30px;
 }
 
-.navbar-toggler-icon {
-    background-color: rgb(43, 163, 238);
-    border-radius: 10%;
-    font-size: 15px;
-    width: 30px;
-
+.navbar-toggler-btn {
+    color: rgb(43, 163, 238);
+    font-size: 20px;
+    padding: 12px;
+    margin: 0;
+    
+}
+.navbar-toggler-btn:hover {
+    color: rgb(102, 196, 255);
+    
 }
 .show {
     background-color: white;
 }
 
-.navbar-toggler-icon:hover {
-    background-color: rgb(34, 135, 197);
-    
-}
+
 .top-login {
     position: absolute;
     right: 25px;
