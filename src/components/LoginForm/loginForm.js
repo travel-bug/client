@@ -31,7 +31,8 @@ class LoginForm extends Component {
         return (
             <div className="login-content">
                 <div className="login-title">
-                        login
+                       <span className="login-title-user">user </span>
+                       <span className="login-title-login">login</span>
                 </div>
                 <div className="image-div">
                 <img className="login-image" src={Image}></img>

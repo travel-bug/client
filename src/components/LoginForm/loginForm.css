@@ -1,19 +1,45 @@
-.username-input {
-    margin: 1rem auto;
+.login-title {
+    margin-bottom: 15px;
 }
-.password-input {
-    margin-bottom: 1rem;
+
+.login-title-login {
+    font-size: 20px;
+    font-family: 'Pacifico', cursive;
+    color: rgb(43, 163, 238);
+}
+
+.image-div {
+    margin-bottom: 15px;
+}
+
+input {
+    margin: 0;
+}
+
+.login-content {
+    padding: 0;
+}
+
+
+.username-input, .password-input {
+    margin-bottom: 16px;
+    border-radius: 5px;
+    border: 1px solid rgb(214, 214, 214);
+    padding-left: 8px;
 }
 
 button.login-btn {
     margin-bottom: 1rem;
-    padding: 0 10px; 
+    padding: 3px 10px; 
     border-radius: 10px;
-    background-color: rgb(43, 163, 238);
+    background-color: white;
+    color: rgb(43, 163, 238);
+    border: 1px solid rgb(43, 163, 238);
 }
 
 button.login-btn:hover {
-    background-color: rgb(102, 196, 255);
+    background-color: rgb(43, 163, 238);
+    color: white;
 }
 
 .sign-up-link {

@@ -10,11 +10,11 @@ function Jumbotron(props) {
 		className="jumbotron text-center" 
 		style={{ backgroundImage: `url(${props.backgroundImage})` }}
 		>
-		<div className="search-bar">
       	<SearchBar 
 			  searchDisplay={props.searchDisplay}
-		  /> 
-		</div>
+		/> 
+		<Row>
+		<Col size="lg-3 md-4 sm-4">
 		<div className="pic-cred">
 			<div className="pic-photographer-div">
 				<p>{props.picTitle}<strong>{props.photographer}</strong></p>
@@ -23,6 +23,8 @@ function Jumbotron(props) {
 				<p>{props.locationTitle}<strong>{props.locationName}</strong></p>
 			</div>
 		</div>
+		</Col>
+		</Row>
     </div>
   );
 }
