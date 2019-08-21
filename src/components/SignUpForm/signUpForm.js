@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AuthService from "../../utilities/auth";
+import Logo from "../Logo/logo";
 import "./signUpForm.css";
 
 class SignUpForm extends Component {
@@ -60,10 +61,12 @@ class SignUpForm extends Component {
     render() {
         return (
             <div id="result" className="signup-content" >
+                <Logo />
                 <div className="signup-title">
-                        sign up
+                        <span className="signup-title-user">user </span>
+                        <span className="signup-title-signup">sign up</span>
                 </div>
-                <div>
+                <div className="signup-form">
                     <input className="firstName-input" placeholder="first name" name="firstName" type="text" value={this.state.firstName} onChange={this.handleInputChange}>
                     </input>
                     <input className="lastName-input" placeholder="last name" name="lastName" type="text" value={this.state.lastName} onChange={this.handleInputChange}>
@@ -75,16 +78,23 @@ class SignUpForm extends Component {
                     <div className="password-div">
                         <input className="password-input" placeholder="password" name="password" type={this.state.passwordType} value={this.state.password} onChange={this.handleInputChange}>
                         </input>
-                        <button className="password-display" onClick={this.hidePassword}>
+                        <a className="password-display" onClick={this.hidePassword}>
                         <i class={"fas " + this.state.eyecon}></i>
+                        </a>
+                    </div>
+                    <div className="signup-button-div">
+                        <button type="button" className="signup-btn" onClick={this.signUpSubmit}>
+                            <span aria-hidden="true">sign up</span>
                         </button>
                     </div>
+                    <div className="already-cool-kid">
+                        already a cool kid?  
+                    </div>
+                    <div className="login-form-link-div">
+                        <a className="login-form-link" onClick={this.props.displayLoginForm}>{" "}login</a>
+                    </div>
                 </div>
-                <div>
-                    <button type="button" className="signup-btn" onClick={this.signUpSubmit}>
-                        <span aria-hidden="true">sign up</span>
-                    </button>
-                </div>
+                
             </div>
         )
     }

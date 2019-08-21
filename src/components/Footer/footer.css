@@ -1,8 +1,9 @@
 
 .footer {
   height: 75px;
-  background: rgb(43, 163, 238);
+  background: white;
   bottom: 0;
+  border-top: 1px solid rgb(214, 214, 214) !important;
 }
   
   .footer div {
@@ -11,4 +12,14 @@
     right: 0;
     padding: 20px 0;
     text-align: center;
+    color: rgb(214, 214, 214);
+  }
+
+  .footer-link {
+    color: black;
+    margin-right: 20px;
+    font-size: 17px;
+  }
+  .footer .footer-link:hover {
+    color: rgb(34, 135, 197);
   }

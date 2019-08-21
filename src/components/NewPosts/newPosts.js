@@ -14,7 +14,7 @@ class NewPosts extends Component {
         posts: Posts
     }
 
-    render() {
+    render(props) {
         return (
             <div className="new-posts">
             <Container>
@@ -29,13 +29,14 @@ class NewPosts extends Component {
                     {this.state.posts.map(post => (
                         
                 <Col size="lg-4 sm-12">
+                {/* change profilePic to 'this.props.profilePic' when getting from DB */}
                     <Card
-                        pic={this.state.pic}
-                        id={post.id}
+                        pics={this.props.pics}
+                        id={this.props.id}
                         profilePic={this.state.profilePic}
-                        person={post.person}
-                        likes={post.likes}
-                        place={post.place}
+                        person={this.props.person}
+                        likes={this.props.likes}
+                        place={this.props.place}
                     >
                     </Card>
                     </Col>
