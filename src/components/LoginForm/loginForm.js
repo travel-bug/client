@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Image from "../../images/avatar.png";
-import AuthService from "../../utilities/auth";
 import "./loginForm.css";
 
 class LoginForm extends Component {
@@ -9,23 +8,7 @@ class LoginForm extends Component {
         password: "",
     }
 
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-        };
 
-    loginSubmit = () => {
-        AuthService.sendSigninRequest({
-            username: this.state.username, 
-            password: this.state.password,
-        })
-            .then(res => this.setState({ 
-                login: false 
-            }))
-            .catch(err => console.log(err));
-        };
 
     render(props) {
         return (
@@ -44,7 +27,7 @@ class LoginForm extends Component {
                     </input>
                 </div>
                 <div>
-                    <button type="button" className="login-btn" onClick={this.loginSubmit}>
+                    <button type="button" className="login-btn" onClick={this.props.loginSubmit}>
                         <span aria-hidden="true">login</span>
                     </button>
                 </div>
