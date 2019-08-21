@@ -1,6 +1,8 @@
 import axios from 'axios';
-import { API_GET, API_POST } from './constants';
+import { API_GET, API_POST, NOTIF } from './constants';
 import { uploadImage } from './firebase';
+import { User } from './auth';
+import Pubsub from './pubsub';
 
 /** 
  * Anonymous IIFE that creates the AuthService object
@@ -19,6 +21,8 @@ const baseUrl = process.env.REACT_APP_BASE_URL || '/';
  * @param {String} posts[].imgUrl The url of the image associated with the post
  */
 var TopPostsAll = [];
+
+var TopPostsEat = [];
 
 (function(obj) {
   /**
@@ -45,6 +49,8 @@ var TopPostsAll = [];
   obj.getTopSeePosts = () => {
     axios.get(baseUrl + API_GET.top_posts_see).then(response => {
       console.log(response);
+      TopPostsEat = response.data;
+      Pubsub.publish(NOTIF.TOP_EAT_POSTS, null);
     }).catch(error => {
       console.log(error);
     });
@@ -121,20 +127,23 @@ var TopPostsAll = [];
     // likely from the User object that lives in AuthService
     // let user_id = User.user_id;
 
-    uploadImage(params.image, user_id, params.postTitle, (imageUrl) => {
-      let newPostParams = {
-        user_id: user_id,
-        content: params.content,
-        place_id: params.place_id,
-        image_url: imageUrl
-      };
-      
-      axios.post(baseUrl + API_POST.new_post, newPostParams).then(response => {
-        console.log(response);
-      }).catch(error => {
-        console.log(error);
+    if (User.user_id) {
+      uploadImage(params.image, User.user_id, params.postTitle, (imageUrl) => {
+        let newPostParams = {
+          user_id: User.user_id,
+          content: params.content,
+          place_id: params.place_id,
+          image_url: imageUrl
+        };
+        
+        axios.post(baseUrl + API_POST.new_post, newPostParams).then(response => {
+          console.log(response);
+        }).catch(error => {
+          console.log(error);
+        });
       });
-    })
+    }
+    
 
     
   }

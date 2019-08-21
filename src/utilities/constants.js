@@ -16,5 +16,6 @@ export const API_GET = {
 
 export const NOTIF = {
   SIGN_IN: 'sign_in',
-  SIGN_OUT: 'sign_out'
+  SIGN_OUT: 'sign_out',
+  TOP_EAT_POSTS: 'top_eat_posts'
 }
