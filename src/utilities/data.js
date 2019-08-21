@@ -23,6 +23,8 @@ const baseUrl = process.env.REACT_APP_BASE_URL || '/';
 var TopPostsAll = [];
 
 var TopPostsEat = [];
+var TopPostsDo = [];
+var TopPostsSee = [];
 
 (function(obj) {
   /**
@@ -35,6 +37,8 @@ var TopPostsEat = [];
     axios.get(baseUrl + API_GET.top_posts).then(response => {
       console.log(response);
       // set the top posts to a variable or coordinate with context
+      TopPostsAll = response.data;
+      Pubsub.publish(NOTIF.TOP_POSTS, null);
     }).catch(error => {
       console.log(error);
     });
@@ -65,6 +69,8 @@ var TopPostsEat = [];
   obj.getTopDoPosts = () => {
     axios.get(baseUrl + API_GET.top_posts_do).then(response => {
       console.log(response);
+      TopPostsDo = response.data;
+      Pubsub.publish(NOTIF.TOP_DO_POSTS, null);
     }).catch(error => {
       console.log(error);
     });
@@ -79,6 +85,8 @@ var TopPostsEat = [];
   obj.getTopEatPosts = () => {
     axios.get(baseUrl + API_GET.top_posts_eat).then(response => {
       console.log(response);
+      TopPostsEat = response.data;
+      Pubsub.publish(NOTIF.TOP_EAT_POSTS, null);
     }).catch(error => {
       console.log(error);
     });
