@@ -2,12 +2,15 @@ import React, { Component} from "react";
 import "./modal.css";
 import LoginForm from "../LoginForm/loginForm";
 import SignUpForm from "../SignUpForm/signUpForm";
+import AuthService from "../../utilities/auth";
 
 class Modal extends Component {
 
     state = {
         login: true,
-        signUp: false
+        signUp: false,
+        username: "",
+        password: ""
     }
     
     displaySignUpForm = () => {
@@ -24,6 +27,25 @@ class Modal extends Component {
         })
     }
 
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        console.log(this.state.username, this.state.password);
+        this.setState({
+            [name]: value
+        });
+        };
+
+    loginSubmit = () => {
+        AuthService.sendSigninRequest({
+            username: this.state.username, 
+            password: this.state.password,
+        })
+            .then(res => this.setState({ 
+                login: false 
+            }))
+            .catch(err => console.log(err));
+        };
+
     render() {
         return (
             
@@ -37,6 +59,7 @@ class Modal extends Component {
                     <div className="forms">
                         {this.state.login ? <LoginForm 
                         displaySignUpForm={this.displaySignUpForm}
+                        loginSubmit={this.loginSubmit}
                         />
                         : null}
 
