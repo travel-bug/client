@@ -66,7 +66,7 @@ var User = {};
    */
   obj.sendSigninRequest = (params) => {
     let authParams = {
-      email: params.email,
+      username: params.username,
       password: params.password
     };
     return new Promise((resolve, reject) => {
