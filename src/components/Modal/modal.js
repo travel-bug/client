@@ -29,13 +29,13 @@ class Modal extends Component {
 
     handleInputChange = event => {
         const { name, value } = event.target;
-        console.log(this.state.username, this.state.password);
         this.setState({
             [name]: value
         });
         };
 
     loginSubmit = () => {
+        console.log(this.state.username + " " + this.state.password);
         AuthService.sendSigninRequest({
             username: this.state.username, 
             password: this.state.password,
@@ -59,6 +59,8 @@ class Modal extends Component {
                     <div className="forms">
                         {this.state.login ? <LoginForm 
                         displaySignUpForm={this.displaySignUpForm}
+                        usernameChange={this.handleInputChange}
+                        passwordChange={this.handleInputChange}
                         loginSubmit={this.loginSubmit}
                         />
                         : null}

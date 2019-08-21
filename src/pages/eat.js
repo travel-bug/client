@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import Image from "../images/Project3_eat.jpg";
 import Jumbotron from "../components/Jumbotron/jumbotron";
 import NewPosts from "../components/NewPosts/newPosts";
-import DataService from "../utilities/data";
+import DataService, { TopPostsEat } from "../utilities/data";
 import PubSub from "../utilities/pubsub";
 import { NOTIF } from "../utilities/constants";
 // import {Container, Col, Row} from "../components/Grid/grid";
@@ -10,19 +10,24 @@ import { NOTIF } from "../utilities/constants";
 
 class Eat extends Component {
     state = {
-        newPosts: null
+        newPosts: []
     }
 
     componentDidMount() {
-        PubSub.subscribe(NOTIF.TOP_EAT_POSTS, this, this.getTopEatPosts)
+        PubSub.subscribe(NOTIF.TOP_EAT_POSTS, this, this.getEatPosts)
+        DataService.getTopEatPosts();
     }
 
     componentWillUnmount() {
-        PubSub.unsubscribe(NOTIF.SIGN_IN, this)
+        PubSub.unsubscribe(NOTIF.TOP_EAT_POSTS, this)
     }
 
-    getTopEatPosts = () => {
-        DataService.getTopEatPosts({})
+    getEatPosts = () => {
+        console.log(TopPostsEat);
+        this.setState({
+            newPosts: TopPostsEat
+        })
+        
     }
 
     render(){
@@ -37,6 +42,7 @@ class Eat extends Component {
                 />
                 <NewPosts 
                     title="eat this..."
+                    newPosts={this.state.newPosts}
                 />
             </div>
         )

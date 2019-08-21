@@ -4,32 +4,29 @@ import Image from "../images/Project3_see.jpg";
 import NewPosts from "../components/NewPosts/newPosts";
 import PubSub from "../utilities/pubsub";
 import {NOTIF} from "../utilities/constants";
-// import DataService from "../utilities/data";
-// import {Container, Col, Row} from "../components/Grid/grid";
+import DataService, { TopPostsSee } from "../utilities/data";
 
 class See extends Component {
     state = {
-        pic: [],
-        id: "",
-        profilePic: "",
-        person: "",
-        likes: "",
-        place: ""
+        newPosts: []
     }
 
-    // componentDidMount() {
-    //     DataService.getTopSeePosts(response)
-    //     .then(
-    //         this.setState({
-                
-    //         })
+    componentDidMount() {
+        PubSub.subscribe(NOTIF.TOP_SEE_POSTS, this, this.getSeePosts)
+        DataService.getTopSeePosts();
+    }
 
-    //     )
-    // }
+    componentWillUnmount() {
+        PubSub.unsubscribe(NOTIF.TOP_SEE_POSTS, this)
+    }
 
-    // componentWillUnmount() {
-    //     PubSub.unsubscribe(NOTIF.SIGN_IN, this)
-    // }
+    getSeePosts = () => {
+        console.log(TopPostsSee);
+        this.setState({
+            newPosts: TopPostsSee
+        })
+        
+    }
     render(){
         return (
             <div>
@@ -42,12 +39,8 @@ class See extends Component {
                 />
                 <NewPosts 
                     title="see this..."
-                    pics={this.state.pics}
-                    id={this.state.id}
-                    profilePic={this.state.profilePic}
-                    person={this.state.person}
-                    likes={this.state.likes}
-                    place={this.state.place}
+                    newPosts={this.state.newPosts}
+                    
                 />
             </div>
         )
