@@ -53,8 +53,8 @@ var TopPostsSee = [];
   obj.getTopSeePosts = () => {
     axios.get(baseUrl + API_GET.top_posts_see).then(response => {
       console.log(response);
-      TopPostsEat = response.data;
-      Pubsub.publish(NOTIF.TOP_EAT_POSTS, null);
+      TopPostsSee = response.data;
+      Pubsub.publish(NOTIF.TOP_SEE_POSTS, null);
     }).catch(error => {
       console.log(error);
     });
