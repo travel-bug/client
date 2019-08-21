@@ -157,4 +157,11 @@ var TopPostsSee = [];
   }
 })(DataService);
 
-export default DataService
+export default DataService;
+
+export {
+  TopPostsAll,
+  TopPostsDo,
+  TopPostsEat,
+  TopPostsSee
+};
