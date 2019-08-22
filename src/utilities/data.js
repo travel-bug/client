@@ -140,8 +140,9 @@ var TopPostsSee = [];
         let newPostParams = {
           user_id: User.user_id,
           content: params.content,
-          place_id: params.place_id,
-          image_url: imageUrl
+          place_name: params.place_name,
+          image_url: imageUrl,
+          category: params.category
         };
         
         axios.post(baseUrl + API_POST.new_post, newPostParams).then(response => {
