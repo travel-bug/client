@@ -6,6 +6,7 @@ import LoginSignUp from "../LoginSignUp/loginSignUp";
 import LoginPic from "../LoginPic/loginPic";
 import Tabs from "../NavTabs/navTabs.json";
 import Modal from "../Modal/modal";
+import PostPhotoModal from "../PostPhotoModal/postPhotoModal";
 import PubSub from "../../utilities/pubsub";
 import { NOTIF } from "../../utilities/constants";
 
@@ -26,6 +27,7 @@ class Navbar2 extends Component {
     state = {
         Tabs,
         modal: false,
+        postPhoto: false,
         loggedInName: "login/sign up",
         profilePic: Avatar,
         loggedInPicDisplay: "none"
@@ -90,6 +92,14 @@ class Navbar2 extends Component {
                             </div>
                         </ul>
                     </div>
+                    <div className="post-btn-div">
+                        <button className="post-btn">
+                            <i class="fas fa-plus"></i>
+                            <div>
+                                <span className="post-text">post</span>
+                            </div>
+                        </button>
+                    </div>
                 </nav>
                
 
@@ -98,7 +108,10 @@ class Navbar2 extends Component {
 	        onClick={this.clearModal}
 	            /> 
 	            : null}
+            {this.state.postPhoto ? <PostPhotoModal /> 
+            : null}
             </div>
+            
         );
     }
 }

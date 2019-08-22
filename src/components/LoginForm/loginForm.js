@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Image from "../../images/avatar.png";
-import AuthService from "../../utilities/auth";
 import "./loginForm.css";
 
 class LoginForm extends Component {
@@ -8,25 +7,6 @@ class LoginForm extends Component {
         username: "",
         password: "",
     }
-
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-        };
-
-    loginSubmit = () => {
-        AuthService.sendSigninRequest({
-            username: this.state.username, 
-            password: this.state.password,
-        })
-            .then(res => this.setState({ 
-                username: res.body.username,
-                login: false 
-            }))
-            .catch(err => console.log(err));
-        };
 
 
 

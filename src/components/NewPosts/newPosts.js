@@ -17,7 +17,7 @@ class NewPosts extends Component {
                 <Row>
                 <Col size="lg-12 sm-12">
                     <div className="posts-title">
-                    <p>{this.props.title}</p>
+                        <p>{this.props.title}</p>
                     </div>
                 </Col>
                 </Row>
