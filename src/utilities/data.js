@@ -136,7 +136,8 @@ var TopPostsSee = [];
     // let user_id = User.user_id;
 
     if (User.user_id) {
-      uploadImage(params.image, User.user_id, params.postTitle, (imageUrl) => {
+      let timestamp = new Date().getTime();
+      uploadImage(params.image, User.user_id, 'post_picture' + timestamp, (imageUrl) => {
         let newPostParams = {
           user_id: User.user_id,
           content: params.content,
