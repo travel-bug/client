@@ -34,7 +34,6 @@ class Navbar2 extends Component {
     }
 
     handleSignIn = () => {
-        console.log("handleSignIn called");
         this.setState({
             loggedInName: User.username
         })
@@ -54,9 +53,16 @@ class Navbar2 extends Component {
         })
     }
 
+    displayPostPhotoModal = () => {
+        this.setState({
+            postPhoto: true
+        })
+    }
+
     clearModal = () => {
         this.setState({
-            modal: false
+            modal: false,
+            postPhoto: false
         })
     }
 
@@ -92,7 +98,7 @@ class Navbar2 extends Component {
                             </div>
                         </ul>
                     </div>
-                    <div className="post-btn-div">
+                    <div className="post-btn-div" onClick={this.displayPostPhotoModal}>
                         <button className="post-btn">
                             <i class="fas fa-plus"></i>
                             <div>
@@ -108,7 +114,10 @@ class Navbar2 extends Component {
 	        onClick={this.clearModal}
 	            /> 
 	            : null}
-            {this.state.postPhoto ? <PostPhotoModal /> 
+
+            {this.state.postPhoto ? <PostPhotoModal 
+            onClick={this.clearModal}
+            /> 
             : null}
             </div>
             
