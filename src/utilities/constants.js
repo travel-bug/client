@@ -21,5 +21,7 @@ export const NOTIF = {
   TOP_POSTS: 'top_posts',
   TOP_EAT_POSTS: 'top_eat_posts',
   TOP_SEE_POSTS: 'top_see_posts',
-  TOP_DO_POSTS: 'top_do_posts'
+  TOP_DO_POSTS: 'top_do_posts',
+  POST_SUBMITTED: 'post_submitted',
+  PROF_UPDATED: 'prof_updated'
 }

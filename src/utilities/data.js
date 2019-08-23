@@ -148,6 +148,7 @@ var TopPostsSee = [];
         
         axios.post(baseUrl + API_POST.new_post, newPostParams).then(response => {
           console.log(response);
+          Pubsub.publish(NOTIF.POST_SUBMITTED, null);
         }).catch(error => {
           console.log(error);
         });
@@ -165,6 +166,7 @@ var TopPostsSee = [];
 
       axios.post(baseUrl + API_POST.update_prof_pic, newProfPic).then(response => {
         console.log(response);
+        Pubsub.publish(NOTIF.PROF_UPDATED, null);
       }).catch(error => {
         console.log(error);
       });
