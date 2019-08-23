@@ -2,7 +2,8 @@ export const API_POST = {
   login: 'api/signin',
   signup: 'api/signup',
   signout: 'api/signout',
-  new_post: 'api/new_post'
+  new_post: 'api/new_post',
+  update_prof_pic: 'api/new_prof_pic'
 }
 
 export const API_GET = {

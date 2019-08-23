@@ -7,27 +7,13 @@ import DataService from "../../utilities/data";
 class PostPhotoModal extends Component {
 
     state = {
-        login: true,
-        signUp: false,
-        username: "",
-        password: "",
         newPic: "",
+        place: "",
+        content: "",
+        category: ""
 
     }
     
-    displaySignUpForm = () => {
-        this.setState({
-            login: false,
-            signUp: true
-        })
-    }
-
-    displayLoginForm = () => {
-        this.setState({
-            login: true,
-            signUp: false
-        })
-    }
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -36,24 +22,15 @@ class PostPhotoModal extends Component {
         });
         };
 
-    loginSubmit = () => {
-        console.log(this.state.username + " " + this.state.password);
-        AuthService.sendSigninRequest({
-            username: this.state.username, 
-            password: this.state.password,
-        })
-            .then(res => this.setState({ 
-                login: false 
-            }))
-            .catch(err => console.log(err));
-        };
-
         consoleLog = ()=>{
+            console.log(this.state.newPic, this.state.content, this.state.place, this.state.category);
            let newPicToPost = {
                 image: this.state.newPic,
                 content: this.state.content,
+                place_name: this.state.place,
+                category: this.state.category
             }
-            DataService.newPost()
+            DataService.newPost(newPicToPost);
         }
 
         
@@ -74,8 +51,9 @@ class PostPhotoModal extends Component {
                         
                     </div>
                     <div>
-                    <input className="form-control my-2 my-sm-0 place-input" type="text" placeholder="enter a location" aria-label="Location" value={this.state.place} onChange={this.handleInputChange}/>
-                    <input className="form-control my-2 my-sm-0 comment-input" type="text" placeholder="enter a comment" aria-label="Comment" value={this.state.content} onChange={this.handleInputChange}/>
+                    <input className="form-control my-2 my-sm-0 place-input" type="text" name="place" placeholder="enter a location" aria-label="Location" value={this.state.place} onChange={this.handleInputChange}/>
+                    <input className="form-control my-2 my-sm-0 comment-input" type="text" name="content" placeholder="enter a comment" aria-label="Comment" value={this.state.content} onChange={this.handleInputChange}/>
+                    <input className="form-control my-2 my-sm-0 category-input" type="text" name="category" placeholder="enter see eat or do" aria-label="Comment" value={this.state.category} onChange={this.handleInputChange}/>
                     </div>
                     <div>
                         <button onClick={this.consoleLog}>
