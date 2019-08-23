@@ -136,12 +136,14 @@ var TopPostsSee = [];
     // let user_id = User.user_id;
 
     if (User.user_id) {
-      uploadImage(params.image, User.user_id, params.postTitle, (imageUrl) => {
+      let timestamp = new Date().getTime();
+      uploadImage(params.image, User.user_id, 'post_picture' + timestamp, (imageUrl) => {
         let newPostParams = {
           user_id: User.user_id,
           content: params.content,
-          place_id: params.place_id,
-          image_url: imageUrl
+          place_name: params.place_name,
+          image_url: imageUrl,
+          category: params.category
         };
         
         axios.post(baseUrl + API_POST.new_post, newPostParams).then(response => {
@@ -150,10 +152,23 @@ var TopPostsSee = [];
           console.log(error);
         });
       });
-    }
-    
+    }    
+  }
 
-    
+  obj.updateProfPic = (params) => {
+    let timestamp = new Date().getTime();
+    uploadImage(params.image, User.user_id, 'profile_picture' + timestamp, (imageUrl) => {
+      let newProfPic = {
+        user_id: User.user_id,
+        image_url: imageUrl
+      };
+
+      axios.post(baseUrl + API_POST.update_prof_pic, newProfPic).then(response => {
+        console.log(response);
+      }).catch(error => {
+        console.log(error);
+      });
+    });
   }
 })(DataService);
 
