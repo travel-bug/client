@@ -9,7 +9,7 @@ function Card(props) {
 				<p className="card-username">{props.person}</p>
 		</div>
 		<div className="card-pic">
-		<img className="card-image" src={props.pic} />
+		<img className="card-image" src={props.pics} />
 
 		</div>
 		<div className="likes-body">
