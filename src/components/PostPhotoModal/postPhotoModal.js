@@ -18,7 +18,7 @@ class PostPhotoModal extends Component {
         
         const picPath = event.target.files;
         this.setState({
-            newPic: picPath
+            newPic: picPath[0]
         });
     }
 
