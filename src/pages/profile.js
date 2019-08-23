@@ -26,6 +26,7 @@ class Profile extends Component {
     }
 
     handleSignIn = () => {
+        console.log(User);
         this.setState({
             loggedInName: User.username
         })

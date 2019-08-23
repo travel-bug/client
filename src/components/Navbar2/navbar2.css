@@ -45,6 +45,37 @@ a.nav-link.login {
     padding: 8px 0;
 }
 
+.post-btn-div {
+    position: absolute;
+    right: 50px;
+    top: 800%;
+}
+
+.post-btn {
+    background-color: white;
+    color: rgb(43, 163, 238);
+    border: 1px solid rgb(43, 163, 238);
+    height: auto;
+    width: auto;
+    border-radius: 5px;
+    padding: 7px;
+
+}
+
+.post-btn:hover {
+    background-color: rgb(43, 163, 238);
+    color: white;
+}
+
+.post-text {
+    font-size: 17px;
+}
+
+.fa-plus {
+    font-size: 30px;
+    margin: 0;
+}
+
 @media (max-width: 991.98px) {
 
     a.nav-link.login {

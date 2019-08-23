@@ -8,35 +8,31 @@ import "./newPosts.css";
 
 
 class NewPosts extends Component {
-    state = {
-        profilePic: Avatar,
-        pic: Pic,
-        posts: Posts
-    }
+  
 
-    render(props) {
+    render() {
         return (
             <div className="new-posts">
             <Container>
                 <Row>
                 <Col size="lg-12 sm-12">
                     <div className="posts-title">
-                    <p>{this.props.title}</p>
+                        <p>{this.props.title}</p>
                     </div>
                 </Col>
                 </Row>
                 <Row>
-                    {this.state.posts.map(post => (
+                    {this.props.newPosts.map(post => (
                         
                 <Col size="lg-4 sm-12">
                 {/* change profilePic to 'this.props.profilePic' when getting from DB */}
                     <Card
-                        pics={this.props.pics}
-                        id={this.props.id}
-                        profilePic={this.state.profilePic}
-                        person={this.props.person}
-                        likes={this.props.likes}
-                        place={this.props.place}
+                        pics={post.pics_url}
+                        id={post.id}
+                        // profilePic={post.profilePic}
+                        person={post.username}
+                        // likes={post.likes}
+                        place={post.place_name}
                     >
                     </Card>
                     </Col>

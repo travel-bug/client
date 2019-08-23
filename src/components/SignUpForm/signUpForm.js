@@ -16,11 +16,6 @@ class SignUpForm extends Component {
     }
     handleInputChange = event => {
         const { name, value } = event.target;
-        console.log("firstName:" + this.state.firstName,
-            "lastName:" + this.state.lastName,
-            "username:" + this.state.username, 
-            "password:" + this.state.password,
-            "email:" + this.state.email)
         this.setState({
             [name]: value
         });

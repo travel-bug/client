@@ -134,7 +134,7 @@ var TopPostsSee = [];
   obj.newPost = (params) => {
     // likely from the User object that lives in AuthService
     // let user_id = User.user_id;
-
+    console.log(User.user_id);
     if (User.user_id) {
       let timestamp = new Date().getTime();
       uploadImage(params.image, User.user_id, 'post_picture' + timestamp, (imageUrl) => {
