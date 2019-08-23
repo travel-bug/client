@@ -46,6 +46,7 @@ var User = {};
         // set important response data to a variable or coordinate with context
         console.log(response);
         packageUserInfo(response.data);
+        console.log(User);
         Pubsub.publish(NOTIF.SIGN_IN, null);
         resolve();
       }).catch(error => {
@@ -74,6 +75,7 @@ var User = {};
         // set important response data to a variable or coordinate with context
         console.log(response);
         packageUserInfo(response.data);
+        console.log(User);
         Pubsub.publish(NOTIF.SIGN_IN, null);
         resolve();
       }).catch(error => {
@@ -105,7 +107,7 @@ var User = {};
 })(AuthService);
 
 const packageUserInfo = (userObj) => {
-  User.userId = userObj.person_id;
+  User.user_id = userObj.id;
   User.username = userObj.username;
   User.firstName = userObj.firstName || '';
   User.lastName = userObj.lastName || '';
