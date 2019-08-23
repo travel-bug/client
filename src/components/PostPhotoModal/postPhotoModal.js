@@ -7,13 +7,20 @@ import DataService from "../../utilities/data";
 class PostPhotoModal extends Component {
 
     state = {
-        newPic: "",
+        newPic: null,
         place: "",
         content: "",
         category: ""
 
     }
     
+    handleImageFile = event => {
+        
+        const picPath = event.target.files;
+        this.setState({
+            newPic: picPath
+        });
+    }
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -47,7 +54,7 @@ class PostPhotoModal extends Component {
                     </div>
                     <div>
                         <h3>photo goes here</h3>
-                        <input type="file" name="newPic" accept="image/*" capture="environment" onChange={this.handleInputChange}/>
+                        <input type="file" name="newPic" accept="image/*" capture="environment" onChange={this.handleImageFile}/>
                         
                     </div>
                     <div>
