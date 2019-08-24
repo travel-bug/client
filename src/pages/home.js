@@ -10,7 +10,9 @@ import AllPosts from "../components/NewPosts/allPosts.js";
 
 class Home extends Component {
     state = {
-        Posts: AllPosts
+        Posts: AllPosts,
+        searchInput: "",
+        searchName: "searchInput"
     }
 
     // componentDidMount() {
@@ -29,6 +31,9 @@ class Home extends Component {
     //     })
         
     // }
+
+
+
     render(){
         return (
             <div>
@@ -38,6 +43,10 @@ class Home extends Component {
                     photographer="mike zapata"
                     locationTitle="location: "
                     locationName="logan square"
+                    // handleInputChange={this.handleInputChange}
+                    // searchInput={this.state.searchInput}
+                    // searchName={this.state.searchName}
+                    // searchSubmit={this.searchSubmit}
                 />
                 <NewPosts 
                     title="new posts"

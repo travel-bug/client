@@ -1,6 +1,10 @@
 import React from 'react';
 import { Row, Col } from "../Grid/grid";
-import Clark from "../../images/profile_clark.jpg";
+import Clark from "../../images/Clark.jpg";
+import Chris from "../../images/Chris.png";
+import Anne from "../../images/Anne.JPG";
+import Mike from "../../images/Mike.png";
+
 
 const TheCreators = () => {
     return (
@@ -19,7 +23,7 @@ const TheCreators = () => {
                 <div className="dev-info">
                     
                         <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        My name is Clark. You'll never guess who my favorite Superhero is...
                         </p>
                     </div>
                 
@@ -28,14 +32,14 @@ const TheCreators = () => {
                 </Col>
                 <Col size="lg-6 md-6 sm-12">
                 <div className="dev-pic-div">
-                    <img src={Clark} className="dev-profile-pic" />
+                    <img src={Chris} className="dev-profile-pic" />
                 </div>
                 <div className="dev-name">
                     <strong>chris burke</strong>
                 </div>
                 <div className="dev-info">
                         <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        I'm a Nuclear Engineer turned Computer Engineer. My favorite food is Fission Chips.
                         </p>
                     </div>
                     
@@ -43,27 +47,27 @@ const TheCreators = () => {
             
                 <Col size="lg-6 md-6 sm-12">
                     <div className="dev-pic-div">
-                        <img src={Clark} className="dev-profile-pic" />
+                        <img src={Anne} className="dev-profile-pic" />
                     </div>
                     <div className="dev-name">
                     <strong>anne coleman</strong>
                 </div>
                     <div className="dev-info">
                         <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        My last name is Coleman. That makes me "Cooler" than you!
                         </p>
                     </div>
                 </Col>
                 <Col size="lg-6 md-6 sm-12">
                 <div className="dev-pic-div">
-                    <img src={Clark} className="dev-profile-pic" />
+                    <img src={Mike} className="dev-profile-pic" />
                 </div>
                 <div className="dev-name">
                     <strong>mike zapata</strong>
                 </div>
                 <div className="dev-info">
                         <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        If you want to know what the cool kids are doing, just ask. I have first hand knowledge.
                         </p>
                     </div>
                     

@@ -32,3 +32,55 @@
     padding: 0;
 
 }
+
+.post-logo .bug-logo {
+    height: 60px;
+    width: 60px;
+}
+.post-logo a {
+    margin-right: 0;
+}
+
+.post {
+    font-size: 17px;
+}
+
+.pic {
+    font-size: 20px;
+    font-family: 'Pacifico', cursive;
+    color: rgb(43, 163, 238);
+}
+
+.post-title {
+    margin-bottom: 15px;
+}
+
+.file-select-div {
+    border: 1px solid rgb(43, 163, 238);
+    border-radius: 5px;
+    height: 300px;
+    width: 316px;
+    
+    text-align: center;
+    margin-bottom: 15px;
+}
+.file-input {
+    background-color: white;
+}
+.place-input, .comment-input, .category-input {
+    margin-bottom: 15px;
+}
+
+button.post-pic-btn {
+    margin-bottom: 10px;
+    padding: 3px 10px; 
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(43, 163, 238);
+    border: 1px solid rgb(43, 163, 238);
+}
+
+button.post-pic-btn:hover {
+    background-color: rgb(43, 163, 238);
+    color: white;
+}

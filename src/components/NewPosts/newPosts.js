@@ -21,7 +21,7 @@ class NewPosts extends Component {
                 <Row>
                     {this.props.Posts.map(post => (
                         
-                <Col size="lg-4 sm-12">
+                <Col size="lg-4 md-6 sm-12">
                 {/* change profilePic to 'this.props.profilePic' when getting from DB */}
                     <Card
                         id={post.id}

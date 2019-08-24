@@ -33,11 +33,21 @@
 }
 
 .pics, .albums {
-    border-right-style: solid;
-    border-right-width: 2px;
-    border-right-color: rgb(214, 214, 214);
+    border-right: 2px solid rgb(214, 214, 214);
 }
 
 button:focus {
     outline: none;
+}
+
+@media (max-width: 767.98px) {
+    .pics, .albums {
+        border-right: none;
+        border-bottom: 2px solid rgb(214, 214, 214);
+        margin-bottom: 7px;
+        padding-bottom: 7px;
+    }
+    .col-pics {
+        margin-bottom: 5px;
+    }
 }

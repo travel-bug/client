@@ -2,6 +2,7 @@ import React, { Component} from "react";
 import "./postPhotoModal.css";
 import AuthService from "../../utilities/auth";
 import DataService from "../../utilities/data";
+import Logo from "../Logo/logo";
 
 
 class PostPhotoModal extends Component {
@@ -53,17 +54,25 @@ class PostPhotoModal extends Component {
                         </button>
                     </div>
                     <div>
-                        <h3>photo goes here</h3>
-                        <input type="file" name="newPic" accept="image/*" capture="environment" onChange={this.handleImageFile}/>
-                        
+                        <div className="post-logo">
+                            <Logo />
+                        </div>
+                        <div className="post-title">
+                            <span className="post">post</span> 
+                            <span className="pic"> pic</span>
+                        </div>
+                    </div>
+                    <div className="file-select-div">
+                        <input className="file-input" type="file" name="newPic" accept="image/*" capture="environment" onChange={this.handleImageFile}/>
+                        <img src={this.newPic}></img>
+                    </div>
+                    <div className="pic-info-div">
+                        <input className="form-control  place-input" type="text" name="place" placeholder="enter a location" aria-label="Location" value={this.state.place} onChange={this.handleInputChange}/>
+                        <input className="form-control  comment-input" type="text" name="content" placeholder="enter a comment" aria-label="Comment" value={this.state.content} onChange={this.handleInputChange}/>
+                        <input className="form-control  category-input" type="text" name="category" placeholder="enter a category" aria-label="Comment" value={this.state.category} onChange={this.handleInputChange}/>
                     </div>
                     <div>
-                    <input className="form-control my-2 my-sm-0 place-input" type="text" name="place" placeholder="enter a location" aria-label="Location" value={this.state.place} onChange={this.handleInputChange}/>
-                    <input className="form-control my-2 my-sm-0 comment-input" type="text" name="content" placeholder="enter a comment" aria-label="Comment" value={this.state.content} onChange={this.handleInputChange}/>
-                    <input className="form-control my-2 my-sm-0 category-input" type="text" name="category" placeholder="enter see eat or do" aria-label="Comment" value={this.state.category} onChange={this.handleInputChange}/>
-                    </div>
-                    <div>
-                        <button onClick={this.consoleLog}>
+                        <button className="post-pic-btn" onClick={this.consoleLog}>
                             <span>post</span>
                         </button>
                     </div>

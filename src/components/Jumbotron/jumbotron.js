@@ -12,6 +12,10 @@ function Jumbotron(props) {
 		>
       	<SearchBar 
 			  searchDisplay={props.searchDisplay}
+			  searchInput={props.searchInput}
+			//   handleInputChange={props.handleInputChange}
+			//   searchSubmit={props.searchSubmit}
+			//   searchName={props.searchName}
 		/> 
 		<Row>
 		<Col size="lg-3 md-4 sm-4">

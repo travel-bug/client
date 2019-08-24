@@ -10,7 +10,7 @@ import DoPosts from "../components/NewPosts/doPosts.js";
 
 class Do extends Component {
     state = {
-        Posts: DoPosts
+        Posts: DoPosts,
     }
 
     // componentDidMount() {
@@ -38,6 +38,7 @@ class Do extends Component {
                     photographer="chris burke"
                     locationTitle="location: "
                     locationName="second city"
+
                 />
                 <NewPosts 
                     title="do this..."
