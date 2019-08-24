@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ProfilePic from "../images/profile_clark.jpg";
+import ProfilePic from "../images/Clark.jpg";
 import ProfileJumbotron from "../components/ProfileJumbotron/profileJumbotron";
 import UserPics from "../components/UserPics/userPics";
 // import {Container, Col, Row} from "../components/Grid/grid";
@@ -7,14 +7,15 @@ import PubSub from "../utilities/pubsub";
 import { NOTIF } from "../utilities/constants";
 import { User } from '../utilities/auth';
 
+
 class Profile extends Component {
     state = {
         profilePic: ProfilePic,
         firstName: "clark",
         lastName: "alms",
         username: "clark.alms",
-        numOfAlbums: "12",
-        numOfPics: "43"  
+        numOfAlbums: "4",
+        numOfPics: "9"  
 
     }
     componentDidMount(handleSignIn) {

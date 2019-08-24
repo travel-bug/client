@@ -10,7 +10,7 @@ class EditProfileModal extends Component {
             <div className="modal">
                 <div id="result" className="modal-content" >
                     <div>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.props.onClick}>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.props.clearModal}>
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>

@@ -29,7 +29,8 @@ class SignUpForm extends Component {
             password: this.state.password,
             email: this.state.email
         })
-            .then(res => this.setState({ 
+            .then(
+                this.setState({ 
                 login: false 
             }))
             .catch(err => console.log(err));

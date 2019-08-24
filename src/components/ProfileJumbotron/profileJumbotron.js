@@ -56,7 +56,7 @@ class ProfileJumbotron extends Component {
 				</Row>
 			</Container>
 			{this.state.editBtnClicked ? <EditProfileModal
-				onClick={this.clearEditProfileModal}
+				clearModal={this.clearEditProfileModal}
 			/>
 			: null}
 		</div>

@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Card from "../Card/card";
 import { Col, Row, Container } from "../Grid/grid";
 import Pic from "../../images/chicago_bean.jpg";
-import Posts from "../NewPosts/newPosts.json";
-import Avatar from "../../images/avatar.png";
+import UserPosts from "../NewPosts/userPosts.js";
 import Albums from "../Albums/albums";
 import "./userPics.css";
 
@@ -11,21 +10,21 @@ import "./userPics.css";
 class UserPics extends Component {
     state = {
         pic: Pic,
-        posts: Posts,
+        posts: UserPosts,
         albums: false,
-        pics: true
+        picsNav: true
     }
 
     showPics = () => {
         this.setState({
-            pics: true,
+            picsNav: true,
             albums: false
         })
     }
 
     showAlbums = () => {
         this.setState({
-            pics: false,
+            picsNav: false,
             albums: true
         })
     }
@@ -47,13 +46,18 @@ class UserPics extends Component {
                     <Row>
                         {this.state.posts.map(post => (
                             <Col size="lg-4 md-6 sm-12 pics">
-                                {this.state.pics ? <Card
-                                pic={this.state.pic}
+                                {this.state.picsNav ? <Card
                                 id={post.id}
+                                profilePic={post.profilePic}
+                                person={post.person}
+                                pic={post.pic}
+                                likes={post.likes}
+                                place={post.place}
+                                category={post.category}
                                 />
                                 : null}
-                                {this.state.albums ? <Albums 
-                                pic={this.state.pic}
+                                {this.state.albumsNav ? <Albums 
+                                pic={post.pic}
                                 id={post.id}
                                 />
                                 : null}

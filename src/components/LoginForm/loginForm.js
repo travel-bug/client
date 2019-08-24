@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Image from "../../images/avatar.png";
+import AuthService from "../../utilities/auth";
 import "./loginForm.css";
 
 class LoginForm extends Component {
@@ -8,7 +9,17 @@ class LoginForm extends Component {
         password: "",
     }
 
-
+    loginSubmit = () => {
+        console.log("user/pass" + this.state.username, this.state.password);
+        AuthService.sendSigninRequest({
+            username: this.state.username, 
+            password: this.state.password,
+        })
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.log(err));
+        };
 
     render(props) {
         return (

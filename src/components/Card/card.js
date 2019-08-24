@@ -27,6 +27,11 @@ function Card(props) {
 			<div className="place-div">
 				<p className="card-place">{props.place}</p>
 			</div>
+			<div className="category-div">
+			{/* <span className="hashtag">@</span> */}
+				<i class="fas fa-hashtag hashtag"></i>
+				<span className="category">{ props.category}</span>
+			</div>
 		</div>
     </div>
 

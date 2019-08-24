@@ -2,33 +2,35 @@ import React, {Component} from "react";
 import Image from "../images/Project3_eat.jpg";
 import Jumbotron from "../components/Jumbotron/jumbotron";
 import NewPosts from "../components/NewPosts/newPosts";
-import DataService, { TopPostsEat } from "../utilities/data";
-import PubSub from "../utilities/pubsub";
-import { NOTIF } from "../utilities/constants";
-// import {Container, Col, Row} from "../components/Grid/grid";
+import EatPosts from "../components/NewPosts/eatPosts.js";
+// import DataService, { TopPostsEat } from "../utilities/data";
+// import PubSub from "../utilities/pubsub";
+// import { NOTIF } from "../utilities/constants";
+
+
 
 
 class Eat extends Component {
     state = {
-        newPosts: []
+        Posts: EatPosts
     }
 
-    componentDidMount() {
-        PubSub.subscribe(NOTIF.TOP_EAT_POSTS, this, this.getEatPosts)
-        DataService.getTopEatPosts();
-    }
+    // componentDidMount() {
+    //     PubSub.subscribe(NOTIF.TOP_EAT_POSTS, this, this.getEatPosts)
+    //     DataService.getTopEatPosts();
+    // }
 
-    componentWillUnmount() {
-        PubSub.unsubscribe(NOTIF.TOP_EAT_POSTS, this)
-    }
+    // componentWillUnmount() {
+    //     PubSub.unsubscribe(NOTIF.TOP_EAT_POSTS, this)
+    // }
 
-    getEatPosts = () => {
-        console.log(TopPostsEat);
-        this.setState({
-            newPosts: TopPostsEat
-        })
+    // getEatPosts = () => {
+    //     console.log(TopPostsEat);
+    //     this.setState({
+    //         newPosts: TopPostsEat
+    //     })
         
-    }
+    // }
 
     render(){
         return (
@@ -42,7 +44,7 @@ class Eat extends Component {
                 />
                 <NewPosts 
                     title="eat this..."
-                    newPosts={this.state.newPosts}
+                    Posts={this.state.Posts}
                 />
             </div>
         )

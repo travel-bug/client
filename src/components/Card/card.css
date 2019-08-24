@@ -17,6 +17,7 @@
   }
   .place-body {
     margin-bottom: 15px;
+    margin-left: 2px;
   }
   .card-image {
     height: 100%;
@@ -29,7 +30,13 @@
     margin: 13px 8px;
   }
 
+  .card-username:hover {
+    color: rgb(43, 163, 238);
+    cursor: pointer; 
+  }
+
   .profile-pic {
+    border-radius: 50%;
     height: 35px;
     width: 35px;
     float: left;
@@ -61,6 +68,25 @@
     padding-bottom: 10px;
   }
 
-  .card-likes, .card-place {
-    margin: 20px 9px;
+  .card-likes {
+    margin: 15px 9px;
+  }
+  .card-place {
+    margin: 15px 13px;
+  }
+  .card-place:hover {
+    color: rgb(43, 163, 238);
+    cursor: pointer;
+  }
+  .category-div {
+    font-size: 17px;
+    text-align: right;
+    margin-top: 13px;
+    margin-right: 10px;
+  }
+
+  .hashtag {
+    /* font-style: bold; */
+    font-size: 15px;
+    color: rgb(43, 163, 238);
   }

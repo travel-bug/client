@@ -2,32 +2,33 @@ import React, { Component } from "react";
 import Image from "../images/chicago.jpg";
 import Jumbotron from "../components/Jumbotron/jumbotron";
 import NewPosts from "../components/NewPosts/newPosts";
-import PubSub from "../utilities/pubsub";
-import {NOTIF} from "../utilities/constants";
-import DataService, { TopPostsAll } from "../utilities/data";
-// import {Container, Col, Row} from "../components/Grid/grid";
+import AllPosts from "../components/NewPosts/allPosts.js";
+
+// import PubSub from "../utilities/pubsub";
+// import {NOTIF} from "../utilities/constants";
+// import DataService, { TopPostsAll } from "../utilities/data";
 
 class Home extends Component {
     state = {
-        newPosts: []
+        Posts: AllPosts
     }
 
-    componentDidMount() {
-        PubSub.subscribe(NOTIF.TOP_POSTS, this, this.getPosts)
-        DataService.getTopPosts();
-    }
+    // componentDidMount() {
+    //     PubSub.subscribe(NOTIF.TOP_POSTS, this, this.getPosts)
+    //     DataService.getTopPosts();
+    // }
 
-    componentWillUnmount() {
-        PubSub.unsubscribe(NOTIF.TOP_POSTS, this)
-    }
+    // componentWillUnmount() {
+    //     PubSub.unsubscribe(NOTIF.TOP_POSTS, this)
+    // }
 
-    getPosts = () => {
-        console.log(TopPostsAll);
-        this.setState({
-            newPosts: TopPostsAll
-        })
+    // getPosts = () => {
+    //     console.log(TopPostsAll);
+    //     this.setState({
+    //         newPosts: TopPostsAll
+    //     })
         
-    }
+    // }
     render(){
         return (
             <div>
@@ -40,7 +41,7 @@ class Home extends Component {
                 />
                 <NewPosts 
                     title="new posts"
-                    newPosts={this.state.newPosts}
+                    Posts={this.state.Posts}
                 />
             </div>
         )
