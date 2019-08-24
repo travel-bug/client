@@ -74,7 +74,7 @@ var User = {};
       axios.post(baseUrl + API_POST.login, authParams).then(response => {
         // set important response data to a variable or coordinate with context
         console.log(response);
-        packageUserInfo(response.data);
+        packageUserInfo(response.data[0]);
         console.log(User);
         Pubsub.publish(NOTIF.SIGN_IN, null);
         resolve();
@@ -107,7 +107,7 @@ var User = {};
 })(AuthService);
 
 const packageUserInfo = (userObj) => {
-  User.user_id = userObj.id;
+  User.user_id = userObj.id || userObj.person_id;
   User.username = userObj.username;
   User.firstName = userObj.firstName || '';
   User.lastName = userObj.lastName || '';
